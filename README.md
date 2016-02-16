@@ -8,6 +8,6 @@
 - Analytics (Google?)
 - Database (Mongo?)
 - Emulator (Genymotion?)
-- Foreman for combining tasks?
+- [Foreman](https://www.npmjs.com/package/foreman) for combining tasks? 
 - Deployment and staging server (heroku?)
 - ios TestFlight app 
