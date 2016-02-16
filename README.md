@@ -7,3 +7,4 @@
 - BDD/TDD (cucumber.js?)
 - Analytics (Google?)
 - Database (Mongo?)
+- Emulator (Genymotion?)
