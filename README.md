@@ -9,3 +9,5 @@
 - Database (Mongo?)
 - Emulator (Genymotion?)
 - Foreman for combining tasks?
+- Deployment and staging server (heroku?)
+- ios TestFlight app 
