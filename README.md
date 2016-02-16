@@ -8,3 +8,4 @@
 - Analytics (Google?)
 - Database (Mongo?)
 - Emulator (Genymotion?)
+- Foreman for combining tasks?
