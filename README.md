@@ -11,3 +11,8 @@
 - [Foreman](https://www.npmjs.com/package/foreman) for combining tasks? 
 - Deployment and staging server (heroku?)
 - ios TestFlight app 
+
+
+#Database
+- PostgreSQL + pg (npm package) + knex (query builder)
+- MongoDB + Mongoose
