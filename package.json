@@ -18,5 +18,14 @@
   "bugs": {
     "url": "https://github.com/Neats29/banana/issues"
   },
-  "homepage": "https://github.com/Neats29/banana#readme"
+  "homepage": "https://github.com/Neats29/banana#readme",
+  "devDependencies": {
+    "gherkin": "^3.2.0",
+    "mocha": "^2.4.5",
+    "mocha-gherkin": "^0.1.15",
+    "protractor-cucumber-framework": "^0.3.4"
+  },
+  "dependencies": {
+    "gulp": "^3.9.1"
+  }
 }
