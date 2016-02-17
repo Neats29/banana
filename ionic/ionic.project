@@ -2,3 +2,5 @@
   "name": "ionic_experiment",
   "app_id": ""
 }
+
+"gulpStartupTasks": ["sass", "watch"]
