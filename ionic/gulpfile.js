@@ -6,6 +6,7 @@ var sass = require('gulp-sass');
 var minifyCss = require('gulp-minify-css');
 var rename = require('gulp-rename');
 var sh = require('shelljs');
+var browserify = require('gulp-browserify');
 
 var paths = {
   sass: ['./scss/**/*.scss']
@@ -24,6 +25,17 @@ gulp.task('sass', function(done) {
     .pipe(rename({ extname: '.min.css' }))
     .pipe(gulp.dest('./www/css/'))
     .on('end', done);
+});
+
+// Basic usage 
+gulp.task('scripts', function() {
+  // Single entry point to browserify 
+  gulp.src(['./node_modules/angular-ui-bootstrap/dist/*.js','./www/js/*.js'])
+    .pipe(browserify({
+      insertGlobals : true,
+      debug : !gulp.env.production
+    }))
+    .pipe(gulp.dest('./www/js/build/'))
 });
 
 gulp.task('watch', function() {
