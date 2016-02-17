@@ -47,7 +47,7 @@ For Testing we are using the following:
 - [mocha](https://www.npmjs.com/package/mocha): a popular assertion library in JS.
 
 ###Doing tests:
-0. Run ```$ npm install -g cucumber ```
+0. Run `$ npm install -g cucumber `
 1. Write your gherkin tests in `ionic/features/*.feature`
 2. then create a JS file in step_definition with the same name underscore steps.js (see example in features folder)
 3. run `gulp cucumber`
