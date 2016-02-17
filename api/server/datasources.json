@@ -1,0 +1,13 @@
+{
+  "db": {
+    "name": "db",
+    "connector": "memory"
+  },
+  "onboard_postgres": {
+    "host": "localhost",
+    "port": "5432",
+    "database": "onboard",
+    "name": "onboard_postgres",
+    "connector": "postgresql"
+  }
+}

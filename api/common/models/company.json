@@ -1,0 +1,32 @@
+{
+  "name": "company",
+  "plural": "companies",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "location": {
+      "type": "string",
+      "required": true
+    },
+    "sector": {
+      "type": "string"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "contratcts": {
+      "type": "hasMany",
+      "model": "contract",
+      "foreignKey": "companyId"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}
