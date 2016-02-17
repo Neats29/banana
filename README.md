@@ -32,6 +32,10 @@ $ npm install -g cordova ionic
 	- To access the gui editor for making your models type:
 		- ``` slc arc ```
 		- Otherwise you can use the CLI
+	- You will need to install the connector for your db of choice 
+	- ``` npm install loopback-connector-postgresql --save ```
+- You will need a Database, you can use heroku, or something local to get started
+	- (we reccomend postgreSQL, as it is easier to manipulate the data structure of relational databases as you go along.)
 
 
 
