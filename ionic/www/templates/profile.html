@@ -1,0 +1,27 @@
+<ion-view>
+ <ion-header-bar>
+   <h1 class="title">Profile</h1>
+ </ion-header-bar>
+ <ion-content>
+   <form ng-submit="" enctype="multipart/form-data" method="POST">
+     <input type="file" accept="image/gif, image/jpeg, image/png" capture="camera">
+      <div class="list">
+        <label class="item item-input">
+          <input type="text" placeholder="First Name">
+        </label>
+        <label class="item item-input">
+          <input type="text" placeholder="Last Name">
+        </label>
+        <label class="item item-input">
+          <input type="text" placeholder="Email">
+        </label>
+        <label class="item item-input">
+          <textarea placeholder="Skills"></textarea>
+        </label>
+        <label class="item">
+          <button class="button button-block button-positive" type="submit">Save</button>
+        </label>
+      </div>
+   </form>
+ </ion-content>
+</ion-view>
