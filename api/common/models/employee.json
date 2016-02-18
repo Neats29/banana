@@ -21,11 +21,14 @@
     },
     "experience": {
       "type": "number"
+    },
+    "image": {
+      "type": "string"
     }
   },
   "validations": [],
   "relations": {
-        "contratcts": {
+    "contratcts": {
       "type": "hasMany",
       "model": "contract",
       "foreignKey": "companyId"
