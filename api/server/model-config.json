@@ -40,10 +40,14 @@
   },
   "company": {
     "dataSource": "onboard_postgres",
-    "public": true
+    "public": true,
+    "$promise": {},
+    "$resolved": true
   },
   "contract": {
     "dataSource": "onboard_postgres",
-    "public": true
+    "public": true,
+    "$promise": {},
+    "$resolved": true
   }
 }
