@@ -7,12 +7,13 @@ var minifyCss = require('gulp-minify-css');
 var rename = require('gulp-rename');
 var sh = require('shelljs');
 var browserify = require('gulp-browserify');
-
+var uglify = require('gulp-uglify');
 var cucumber = require('gulp-cucumber');
  
 
 var paths = {
-  sass: ['./scss/**/*.scss']
+  sass: ['./scss/**/*.scss'],
+  js: ['./www/js/*.js']
 };
 
 gulp.task('default', ['sass']);
@@ -33,16 +34,19 @@ gulp.task('sass', function(done) {
 // Basic usage 
 gulp.task('scripts', function() {
   // Single entry point to browserify 
-  gulp.src(['./node_modules/angular-ui-bootstrap/dist/*.js','./www/js/*.js'])
+  gulp.src(['./www/js/app.js'])
     .pipe(browserify({
       insertGlobals : true,
       debug : !gulp.env.production
     }))
+    .pipe(rename('bundle.js'))
+    .pipe(uglify()) 
     .pipe(gulp.dest('./www/js/build/'))
 });
 
 gulp.task('watch', function() {
   gulp.watch(paths.sass, ['sass']);
+  gulp.watch(paths.js, ['scripts'])
 });
 
 gulp.task('install', ['git-check'], function() {
