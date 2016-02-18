@@ -39,9 +39,9 @@ gulp.task('scripts', function() {
       insertGlobals : true,
       debug : !gulp.env.production
     }))
-    .pipe(rename('bundle.js'))
-    .pipe(uglify()) 
-    .pipe(gulp.dest('./www/js/build/'))
+    // .pipe(uglify()) 
+    .pipe(rename({ extname: '.min.js' }))
+    .pipe(gulp.dest('./www/dist/js/'))
 });
 
 gulp.task('watch', function() {
