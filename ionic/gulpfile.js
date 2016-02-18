@@ -8,7 +8,6 @@ var rename = require('gulp-rename');
 var sh = require('shelljs');
 
 var cucumber = require('gulp-cucumber');
- 
 
 var paths = {
   sass: ['./scss/**/*.scss']
