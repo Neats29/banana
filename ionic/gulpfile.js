@@ -27,7 +27,7 @@ gulp.task('sass', function(done) {
       keepSpecialComments: 0
     }))
     .pipe(rename({ extname: '.min.css' }))
-    .pipe(gulp.dest('./www/css/'))
+    .pipe(gulp.dest('./www/dist/css/'))
     .on('end', done);
 });
 
@@ -39,7 +39,7 @@ gulp.task('scripts', function() {
       insertGlobals : true,
       debug : !gulp.env.production
     }))
-    // .pipe(uglify()) 
+    .pipe(uglify({mangle: false})) 
     .pipe(rename({ extname: '.min.js' }))
     .pipe(gulp.dest('./www/dist/js/'))
 });
