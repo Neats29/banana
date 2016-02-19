@@ -9,7 +9,7 @@ var sh = require('shelljs');
 var browserify = require('gulp-browserify');
 var uglify = require('gulp-uglify');
 var cucumber = require('gulp-cucumber');
- 
+var ngAnnotate = require('gulp-ng-annotate');
 
 var paths = {
   sass: ['./scss/**/*.scss'],
@@ -22,31 +22,35 @@ gulp.task('sass', function(done) {
   gulp.src('./scss/ionic.app.scss')
     .pipe(sass())
     .on('error', sass.logError)
-    .pipe(gulp.dest('./www/css/'))
-    
+    .pipe(gulp.dest('./www/dist/css/'))
     .pipe(minifyCss({
       keepSpecialComments: 0
     }))
     .pipe(rename({ extname: '.min.css' }))
-    .pipe(gulp.dest('./www/css/'))
+    .pipe(gulp.dest('./www/dist/css/'))
     .on('end', done);
 });
 
 gulp.task('scripts', function() {
   
   // Uses app.js as a single entry point to determine module dependancies. 
+  // ToDo: Add uniminified js file to the dist js folder
   gulp.src(['./www/js/app.js'])
     .pipe(browserify({
       insertGlobals : true,
       debug : !gulp.env.production
     }))
-    // .pipe(uglify({mangle: false})) 
+    // ToDo: Install ng-annotate to prevent variables from being renames
+    .pipe(ngAnnotate())
+    .pipe(gulp.dest('./www/dist/js/'))
+    .pipe(uglify()) 
     .pipe(rename({ extname: '.min.js' }))
     .pipe(gulp.dest('./www/dist/js/'))
 
-  // Imports the bootstrap css library (angular-ui-bootstrap dependancy)    
-  gulp.src(['./node_modules/bootstrap/dist/css/*'])
-    .pipe(gulp.dest('./www/lib/bootstrap/css/')) 
+  // Imports the bootstrap css library (angular-ui-bootstrap dependancy) 
+  // ToDo: Remove this once the CSS library is imported through Sass   
+  // gulp.src(['./node_modules/bootstrap/dist/css/*'])
+  // .pipe(gulp.dest('./www/lib/bootstrap/css/')) 
 });
 
 gulp.task('watch', function() {

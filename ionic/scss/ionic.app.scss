@@ -27,3 +27,5 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 @import "www/lib/ionic/scss/ionic";
 @import "angular-href";
 
+// Bootstrap CSS (angular-ui-bootstrap dependancy)
+@import "node_modules/bootstrap/dist/css/bootstrap"

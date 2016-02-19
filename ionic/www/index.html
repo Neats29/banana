@@ -1,13 +1,12 @@
 <!DOCTYPE html>
 <html>
-  <head>
+<head>
     <meta charset="utf-8">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
     <title></title>
 
     <!-- compiled css output -->
-    <link href="css/ionic.app.css" rel="stylesheet">
-    <link href="lib/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link href="dist/css/ionic.app.min.css" rel="stylesheet">
 
     <!-- ionic/angularjs js -->
     <script src="lib/ionic/js/ionic.bundle.js"></script>
@@ -16,30 +15,29 @@
     <script src="cordova.js"></script>
 
     <!-- your app's js -->
-    <!-- Only app.js is specified here, as it is the single-point entry for all dependancies pulled in using gulp-browserify -->
+    <!-- Only app.min.js is specified here, as it is the single-point entry for all dependancies pulled in using gulp-browserify -->
     <script src="dist/js/app.min.js"></script>
-  </head>
+</head>
 
-  <body ng-app="starter">
-    <!-- <ion-nav-view class="bar-positive"></ion-nav-view> -->  
+<body ng-app="starter">
+    <!-- <ion-nav-view class="bar-positive"></ion-nav-view> -->
 
-    <div class="container" >
-      <div class="jumbotron" >SADFNKDJFGOEJO</div>
+    <div class="container">
+        <div class="jumbotron">SADFNKDJFGOEJO</div>
     </div>
 
     <div ng-controller='UibAccordionController'>
-
-     <uib-accordion>
-        <uib-accordion-group>
-            <uib-accordion-heading>First Heading</uib-accordion-heading>
-            This is the content for the first heading 
-        </uib-accordion-group>
-        <uib-accordion-group>
-          <uib-accordion-heading>SecondHeading</uib-accordion-heading>
-          This is the content for the second heading 
-        </uib-accordion-group>
-      </uib-accordion>
-
+        <uib-accordion>
+            <uib-accordion-group>
+                <uib-accordion-heading>First Heading</uib-accordion-heading>
+                This is the content for the first heading 
+            </uib-accordion-group>
+            
+            <uib-accordion-group>
+                <uib-accordion-heading>SecondHeading</uib-accordion-heading>
+                This is the content for the second heading 
+            </uib-accordion-group>
+        </uib-accordion>
     </div>  
-  </body>
+</body>
 </html>
