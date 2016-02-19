@@ -7,9 +7,12 @@
 
 // To transform the sources, Browserify starts at one CommonJS module (the entry point [App.js]) and follows all require statements in this module. 
 var controllers = require('./controllers.js');
-var bootstrap = require('../../node_modules/angular-ui-bootstrap/dist/ui-bootstrap.js');
+var upload = require('./upload.js');
+var bootstrap = require('../../node_modules/angular-ui-bootstrap/dist/ui-bootstrap-tpls.js');
 
-angular.module('starter', ['ionic', 'upload', 'starter.controllers' ])
+angular.module('starter', ['ionic', 'upload', 'starter.controllers', 'ui.bootstrap'])
+
+.controller ('MainController', function ($scope) {} )
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {

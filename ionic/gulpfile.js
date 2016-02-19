@@ -9,38 +9,42 @@ var sh = require('shelljs');
 var browserify = require('gulp-browserify');
 var uglify = require('gulp-uglify');
 var cucumber = require('gulp-cucumber');
+var ngAnnotate = require('gulp-ng-annotate');
 
 var paths = {
   sass: ['./scss/**/*.scss'],
   js: ['./www/js/*.js']
 };
 
-gulp.task('default', ['sass']);
+gulp.task('default', ['sass', '']);
 
 gulp.task('sass', function(done) {
   gulp.src('./scss/ionic.app.scss')
     .pipe(sass())
     .on('error', sass.logError)
-    .pipe(gulp.dest('./www/css/'))
-    .pipe(minifyCss({
-      keepSpecialComments: 0
-    }))
+    .pipe(gulp.dest('./www/dist/css/'))
+    
+    .pipe(minifyCss({keepSpecialComments: 0}))
     .pipe(rename({ extname: '.min.css' }))
-    .pipe(gulp.dest('./www/css/'))
+    .pipe(gulp.dest('./www/dist/css/'))
     .on('end', done);
 });
 
-// Basic usage 
 gulp.task('scripts', function() {
-  // Single entry point to browserify 
+  
+  // Uses app.js as a single entry point to determine module dependancies. 
+  // ToDo: Add uniminified js file to the dist js folder
   gulp.src(['./www/js/app.js'])
     .pipe(browserify({
-      insertGlobals : true,
-      debug : !gulp.env.production
+      insertGlobals : true
     }))
-    .pipe(rename('bundle.js'))
+    .pipe(ngAnnotate())
+    .pipe(gulp.dest('./www/dist/js/'))
+
     .pipe(uglify()) 
-    .pipe(gulp.dest('./www/js/build/'))
+    .pipe(rename({ extname: '.min.js' }))
+    .pipe(gulp.dest('./www/dist/js/'))
+
 });
 
 gulp.task('watch', function() {
