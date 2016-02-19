@@ -36,8 +36,7 @@ gulp.task('scripts', function() {
   // ToDo: Add uniminified js file to the dist js folder
   gulp.src(['./www/js/app.js'])
     .pipe(browserify({
-      insertGlobals : true,
-      debug : !gulp.env.production
+      insertGlobals : true
     }))
     .pipe(ngAnnotate())
     .pipe(gulp.dest('./www/dist/js/'))

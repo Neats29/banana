@@ -9,8 +9,6 @@ angular.module('starter.controllers', [])
   //$scope.$on('$ionicView.enter', function(e) {
   //});
 
-  // test comment
-
   // Form data for the login modal
   $scope.loginData = {};
 
