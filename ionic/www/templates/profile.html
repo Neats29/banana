@@ -6,17 +6,20 @@
    <form ng-submit="" enctype="multipart/form-data" method="POST" action="http://banana-onbaord.herokuapp.com/api/employees
 ">   
      <input id="inputImage" type="file" accept="image/*" image="image" />
-            <img ng-show="image" ng-src="{{image.url}}" type="{{image.file.type}}" style="width:200px;height:auto" capture="camera" accept="image/png, image/jpeg, image/gif"/> 
+        <img ng-show="image" ng-src="{{image.url}}" type="{{image.file.type}}" style="width:200px;height:auto" capture="camera" accept="image/png, image/jpeg, image/gif"/> 
             
       <div class="list">
         <label class="item item-input">
-          <input type="text" placeholder="First Name">
+          <input type="text" placeholder="First Name" required>
         </label>
         <label class="item item-input">
-          <input type="text" placeholder="Last Name">
+          <input type="text" placeholder="Last Name" required>
         </label>
         <label class="item item-input">
-          <input type="text" placeholder="Email">
+          <input type="text" placeholder="Email" required>
+        </label>
+         <label class="item item-input">
+          <input type="text" placeholder="Phone Number">
         </label>
         <label class="item item-input">
           <textarea placeholder="Skills"></textarea>
