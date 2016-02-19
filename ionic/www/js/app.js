@@ -4,7 +4,19 @@
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
 // 'starter.controllers' is found in controllers.js
-angular.module('starter', ['ionic', 'upload', 'starter.controllers' ])
+
+
+// To transform the sources, Browserify starts at one CommonJS module (the entry point [App.js]) and follows all require statements in this module. 
+// The entry point and all dependencies are transferred into the bundle. The require statements in the dependencies are also resolved and included into the bundle. 
+// This process is continued recursively until all require statements have been processed and the bundle is complete.
+
+var controllers = require('./controllers.js');
+var upload = require('./upload.js');
+var bootstrap = require('../../node_modules/angular-ui-bootstrap/dist/ui-bootstrap-tpls.js');
+
+angular.module('starter', ['ionic', 'upload', 'starter.controllers', 'ui.bootstrap'])
+
+.controller ('MainController', function ($scope) {} )
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {

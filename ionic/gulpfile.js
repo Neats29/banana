@@ -7,41 +7,50 @@ var minifyCss = require('gulp-minify-css');
 var rename = require('gulp-rename');
 var sh = require('shelljs');
 var browserify = require('gulp-browserify');
-
+var uglify = require('gulp-uglify');
 var cucumber = require('gulp-cucumber');
+var ngAnnotate = require('gulp-ng-annotate');
 
 var paths = {
-  sass: ['./scss/**/*.scss']
+  sass: ['./scss/**/*.scss'],
+  js: ['./www/js/*.js']
 };
 
-gulp.task('default', ['sass']);
+gulp.task('default', ['sass', '']);
 
 gulp.task('sass', function(done) {
   gulp.src('./scss/ionic.app.scss')
     .pipe(sass())
     .on('error', sass.logError)
-    .pipe(gulp.dest('./www/css/'))
-    .pipe(minifyCss({
-      keepSpecialComments: 0
-    }))
+    .pipe(gulp.dest('./www/dist/css/'))
+    
+    .pipe(minifyCss({keepSpecialComments: 0}))
     .pipe(rename({ extname: '.min.css' }))
-    .pipe(gulp.dest('./www/css/'))
+    .pipe(gulp.dest('./www/dist/css/'))
     .on('end', done);
 });
 
-// Basic usage 
 gulp.task('scripts', function() {
-  // Single entry point to browserify 
-  gulp.src(['./node_modules/angular-ui-bootstrap/dist/*.js','./www/js/*.js'])
+  
+  // Uses app.js as a single entry point to determine module dependancies. 
+  // ToDo: Add uniminified js file to the dist js folder
+  gulp.src(['./www/js/app.js'])
     .pipe(browserify({
       insertGlobals : true,
       debug : !gulp.env.production
     }))
-    .pipe(gulp.dest('./www/js/build/'))
+    .pipe(ngAnnotate())
+    .pipe(gulp.dest('./www/dist/js/'))
+
+    .pipe(uglify()) 
+    .pipe(rename({ extname: '.min.js' }))
+    .pipe(gulp.dest('./www/dist/js/'))
+
 });
 
 gulp.task('watch', function() {
   gulp.watch(paths.sass, ['sass']);
+  gulp.watch(paths.js, ['scripts'])
 });
 
 gulp.task('install', ['git-check'], function() {
