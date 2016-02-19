@@ -1,1 +1,19 @@
 /* Empty. Add your own CSS if you like */
+
+/*
+#inputImage::-webkit-file-upload-button {
+  visibility: hidden;
+}
+*/
+.upload-wrapper input {
+  display: block;
+  margin: auto;
+  height: 50px;
+  widows: 200px;
+}
+
+.upload-wrapper, 
+.upload-wrapper img {
+  display: block;
+  margin: 10px auto;
+}
