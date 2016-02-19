@@ -16,32 +16,37 @@ var paths = {
   js: ['./www/js/*.js']
 };
 
-gulp.task('default', ['sass']);
+gulp.task('default', ['sass', '']);
 
 gulp.task('sass', function(done) {
   gulp.src('./scss/ionic.app.scss')
     .pipe(sass())
     .on('error', sass.logError)
     .pipe(gulp.dest('./www/css/'))
+    
     .pipe(minifyCss({
       keepSpecialComments: 0
     }))
     .pipe(rename({ extname: '.min.css' }))
-    .pipe(gulp.dest('./www/dist/css/'))
+    .pipe(gulp.dest('./www/css/'))
     .on('end', done);
 });
 
-// Basic usage 
 gulp.task('scripts', function() {
-  // Single entry point to browserify 
+  
+  // Uses app.js as a single entry point to determine module dependancies. 
   gulp.src(['./www/js/app.js'])
     .pipe(browserify({
       insertGlobals : true,
       debug : !gulp.env.production
     }))
-    .pipe(uglify({mangle: false})) 
+    // .pipe(uglify({mangle: false})) 
     .pipe(rename({ extname: '.min.js' }))
     .pipe(gulp.dest('./www/dist/js/'))
+
+  // Imports the bootstrap css library (angular-ui-bootstrap dependancy)    
+  gulp.src(['./node_modules/bootstrap/dist/css/*'])
+    .pipe(gulp.dest('./www/lib/bootstrap/css/')) 
 });
 
 gulp.task('watch', function() {
