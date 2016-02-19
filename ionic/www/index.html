@@ -15,29 +15,11 @@
     <script src="cordova.js"></script>
 
     <!-- your app's js -->
-    <!-- Only app.min.js is specified here, as it is the single-point entry for all dependancies pulled in using gulp-browserify -->
+    <!-- Only app.min.js is specified here, as app.js is the single-point entry for all dependancies pulled in using gulp-browserify -->
     <script src="dist/js/app.min.js"></script>
 </head>
 
 <body ng-app="starter">
-    <!-- <ion-nav-view class="bar-positive"></ion-nav-view> -->
-
-    <div class="container">
-        <div class="jumbotron">SADFNKDJFGOEJO</div>
-    </div>
-
-    <div ng-controller='UibAccordionController'>
-        <uib-accordion>
-            <uib-accordion-group>
-                <uib-accordion-heading>First Heading</uib-accordion-heading>
-                This is the content for the first heading 
-            </uib-accordion-group>
-            
-            <uib-accordion-group>
-                <uib-accordion-heading>SecondHeading</uib-accordion-heading>
-                This is the content for the second heading 
-            </uib-accordion-group>
-        </uib-accordion>
-    </div>  
+    <ion-nav-view class="bar-positive"></ion-nav-view>  
 </body>
 </html>

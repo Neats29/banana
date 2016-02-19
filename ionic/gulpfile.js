@@ -23,9 +23,8 @@ gulp.task('sass', function(done) {
     .pipe(sass())
     .on('error', sass.logError)
     .pipe(gulp.dest('./www/dist/css/'))
-    .pipe(minifyCss({
-      keepSpecialComments: 0
-    }))
+    
+    .pipe(minifyCss({keepSpecialComments: 0}))
     .pipe(rename({ extname: '.min.css' }))
     .pipe(gulp.dest('./www/dist/css/'))
     .on('end', done);
@@ -40,17 +39,13 @@ gulp.task('scripts', function() {
       insertGlobals : true,
       debug : !gulp.env.production
     }))
-    // ToDo: Install ng-annotate to prevent variables from being renames
     .pipe(ngAnnotate())
     .pipe(gulp.dest('./www/dist/js/'))
+
     .pipe(uglify()) 
     .pipe(rename({ extname: '.min.js' }))
     .pipe(gulp.dest('./www/dist/js/'))
 
-  // Imports the bootstrap css library (angular-ui-bootstrap dependancy) 
-  // ToDo: Remove this once the CSS library is imported through Sass   
-  // gulp.src(['./node_modules/bootstrap/dist/css/*'])
-  // .pipe(gulp.dest('./www/lib/bootstrap/css/')) 
 });
 
 gulp.task('watch', function() {
