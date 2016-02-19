@@ -6,13 +6,10 @@
 // 'starter.controllers' is found in controllers.js
 
 // To transform the sources, Browserify starts at one CommonJS module (the entry point [App.js]) and follows all require statements in this module. 
-// The entry point and all dependencies are transferred into the bundle. The require statements in the dependencies are also resolved and included into the bundle. 
-// This process is continued recursively until all require statements have been processed and the bundle is complete.
-// var ui-bootstrap      = require('./../node_modules/angular-ui-bootstrap/dist/ui-bootstrap.js');
 var controllers = require('./controllers.js');
 var bootstrap = require('../../node_modules/angular-ui-bootstrap/dist/ui-bootstrap.js');
 
-angular.module('starter', ['ionic', 'starter.controllers', 'ui.bootstrap'])
+angular.module('starter', ['ionic', 'upload', 'starter.controllers' ])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -73,6 +70,16 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ui.bootstrap'])
       'menuContent': {
         templateUrl: 'templates/playlist.html',
         controller: 'PlaylistCtrl'
+      }
+    }
+  })
+    
+  .state('app.profile', {
+    url: '/profile',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/profile.html',
+        controller: 'ProfileCtrl'
       }
     }
   });

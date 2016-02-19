@@ -9,7 +9,6 @@ var sh = require('shelljs');
 var browserify = require('gulp-browserify');
 var uglify = require('gulp-uglify');
 var cucumber = require('gulp-cucumber');
- 
 
 var paths = {
   sass: ['./scss/**/*.scss'],

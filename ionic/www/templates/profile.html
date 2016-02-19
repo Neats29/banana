@@ -1,0 +1,30 @@
+<ion-view>
+ <ion-header-bar>
+   <h1 class="title">Profile</h1>
+ </ion-header-bar>
+ <ion-content>
+   <form ng-submit="" enctype="multipart/form-data" method="POST" action="http://banana-onbaord.herokuapp.com/api/employees
+">   
+     <input id="inputImage" type="file" accept="image/*" image="image" />
+            <img ng-show="image" ng-src="{{image.url}}" type="{{image.file.type}}" style="width:200px;height:auto" capture="camera" accept="image/png, image/jpeg, image/gif"/> 
+            
+      <div class="list">
+        <label class="item item-input">
+          <input type="text" placeholder="First Name">
+        </label>
+        <label class="item item-input">
+          <input type="text" placeholder="Last Name">
+        </label>
+        <label class="item item-input">
+          <input type="text" placeholder="Email">
+        </label>
+        <label class="item item-input">
+          <textarea placeholder="Skills"></textarea>
+        </label>
+        <label class="item">
+          <button class="button button-block button-positive" type="submit">Save</button>
+        </label>
+      </div>
+   </form>
+ </ion-content>
+</ion-view>
