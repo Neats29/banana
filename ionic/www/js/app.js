@@ -13,7 +13,7 @@ var controllers = require('./controllers.js');
 var ngResource = require('../../node_modules/angular-resource/angular-resource.min.js')
 var bootstrap = require('../../node_modules/angular-ui-bootstrap/dist/ui-bootstrap-tpls.js');
 
-angular.module('starter', ['ionic', 'starter.controllers', 'ui.bootstrap', 'ngResource', 'lbServices'])
+angular.module('starter', ['ionic', 'starter.controllers', 'ui.bootstrap', 'lbServices'])
 
 .controller ('MainController', function ($scope) {} )
 
@@ -33,7 +33,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ui.bootstrap', 'ngRe
   });
 })
 
-.config(function($stateProvider, $urlRouterProvider) {
+.config(function($stateProvider, $urlRouterProvider, LoopBackResourceProvider) {
   $stateProvider
 
     .state('app', {
@@ -69,7 +69,14 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ui.bootstrap', 'ngRe
         }
       }
     })
-
+  .state('app.formtest', {
+    url: '/formtest',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/formtest.html',
+      }
+    }
+  })
   .state('app.single', {
     url: '/playlists/:playlistId',
     views: {
@@ -79,6 +86,10 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ui.bootstrap', 'ngRe
       }
     }
   });
+//
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/app/playlists');
+
+  // Change the URL where to access the LoopBack REST API server
+  LoopBackResourceProvider.setUrlBase('http://banana-onbaord.herokuapp.com/api');
 });
