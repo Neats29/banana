@@ -13,8 +13,9 @@
 var controllers = require('./controllers.js');
 var upload = require('./upload.js');
 var bootstrap = require('../../node_modules/angular-ui-bootstrap/dist/ui-bootstrap-tpls.js');
+var profileUpload = require('./profileUpload.js');
 
-angular.module('starter', ['ionic', 'upload', 'starter.controllers', 'ui.bootstrap'])
+angular.module('starter', ['ionic', 'upload', 'starter.controllers', 'ui.bootstrap', 'profileUpload'])
 
 .controller ('MainController', function ($scope) {} )
 

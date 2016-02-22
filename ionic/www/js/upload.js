@@ -44,5 +44,3 @@ angular.module('upload', [])
         }
     };
 });
-
-    
