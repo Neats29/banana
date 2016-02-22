@@ -5,6 +5,7 @@
 // the 2nd parameter is an array of 'requires'
 // 'starter.controllers' is found in controllers.js
 
+
 // To transform the sources, Browserify starts at one CommonJS module (the entry point [App.js]) and follows all require statements in this module. 
 // The entry point and all dependencies are transferred into the bundle. The require statements in the dependencies are also resolved and included into the bundle. 
 // This process is continued recursively until all require statements have been processed and the bundle is complete.
@@ -12,8 +13,10 @@ var models = require('./models/lb-services.js');
 var controllers = require('./controllers.js');
 var ngResource = require('../../node_modules/angular-resource/angular-resource.min.js')
 var bootstrap = require('../../node_modules/angular-ui-bootstrap/dist/ui-bootstrap-tpls.js');
+var upload = require('./upload.js');
 
-angular.module('starter', ['ionic', 'starter.controllers', 'ui.bootstrap', 'lbServices'])
+
+angular.module('starter', ['ionic', 'upload', 'starter.controllers', 'ui.bootstrap', 'lbServices'])
 
 .controller ('MainController', function ($scope) {} )
 
@@ -83,6 +86,16 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ui.bootstrap', 'lbSe
       'menuContent': {
         templateUrl: 'templates/playlist.html',
         controller: 'PlaylistCtrl'
+      }
+    }
+  })
+    
+  .state('app.profile', {
+    url: '/profile',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/profile.html',
+        controller: 'ProfileCtrl'
       }
     }
   });

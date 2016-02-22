@@ -25,7 +25,7 @@
   },
   "validations": [],
   "relations": {
-        "contratcts": {
+    "contratcts": {
       "type": "hasMany",
       "model": "contract",
       "foreignKey": "companyId"

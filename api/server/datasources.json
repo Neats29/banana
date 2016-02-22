@@ -4,10 +4,13 @@
     "connector": "memory"
   },
   "onboard_postgres": {
-    "host": "localhost",
-    "port": "5432",
-    "database": "onboard",
+    "host": "ec2-107-20-224-236.compute-1.amazonaws.com",
+    "port": 5432,
+    "database": "dcq440d7eb3hb9",
+    "username": "taukdflfxvmcza",
+    "password": "XeBtrGResIdrO7u1yjghqy8c2J",
     "name": "onboard_postgres",
-    "connector": "postgresql"
+    "connector": "postgresql",
+    "ssl": "require"
   }
 }

@@ -25,7 +25,6 @@
     "mocha": "^2.4.5",
     "mocha-gherkin": "^0.1.15",
     "protractor": "^3.1.1",
-    "protractor-cucumber-framework": "^0.3.4",
     "shelljs": "^0.3.0",
     "zombie": "^4.2.1"
   },

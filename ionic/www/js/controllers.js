@@ -9,8 +9,6 @@ angular.module('starter.controllers', ['ionic','lbServices'])
   //$scope.$on('$ionicView.enter', function(e) {
   //});
 
-  // test comment
-
   // Form data for the login modal
   $scope.loginData = {};
 
@@ -65,4 +63,16 @@ angular.module('starter.controllers', ['ionic','lbServices'])
         Employee.create(employee);
       }
   }; 
+})
+.controller('ProfileCtrl', function($scope, $http) {
+  $scope.single = function(image) {
+    var formData = new FormData();
+    formData.append('image', image, image.name);
+    $http.post('upload', formData, {
+        headers: { 'Content-Type': false },
+        transformRequest: angular.identity
+    }).success(function(result) {
+        $scope.uploadedImgSrc = result.src;
+    });
+  };
 });
