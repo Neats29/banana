@@ -1,4 +1,4 @@
-angular.module('starter.controllers', [])
+angular.module('starter.controllers', ['ionic','lbServices'])
 
 .controller('AppCtrl', function($scope, $ionicModal, $timeout) {
 
@@ -54,6 +54,16 @@ angular.module('starter.controllers', [])
 .controller('PlaylistCtrl', function($scope, $stateParams) {
 })
 
+.controller('FormCtrl', function($scope ,Employee) {
+    $scope.signIn = function(employee) {
+
+      console.log(employee);
+      if (true /* TODO: Add validation condition */){
+
+        Employee.create(employee);
+      }
+  }; 
+})
 .controller('ProfileCtrl', function($scope, $http) {
   $scope.single = function(image) {
     var formData = new FormData();
