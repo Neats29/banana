@@ -8,7 +8,7 @@
 // To transform the sources, Browserify starts at one CommonJS module (the entry point [App.js]) and follows all require statements in this module. 
 // The entry point and all dependencies are transferred into the bundle. The require statements in the dependencies are also resolved and included into the bundle. 
 // This process is continued recursively until all require statements have been processed and the bundle is complete.
-
+//var models = require('./models/lb-services.js');
 var controllers = require('./controllers.js');
 var bootstrap = require('../../node_modules/angular-ui-bootstrap/dist/ui-bootstrap-tpls.js');
 
