@@ -1,11 +1,7 @@
 # banana
 
 To start please clone the project and install the following:
-- `npm install -g gulp`
-- `npm install -g bower`
-- `npm install -g cucumber`
-- `npm install -g cordova ionic`
-- `npm install -g strongloop`
+- `npm install -g gulp, bower, cucumber, cordova ionic, strongloop`
 - `npm install` (to get all the dependencies)
 
 # Mobile App
