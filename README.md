@@ -17,6 +17,26 @@ $ npm install -g cordova ionic
 - Run `gulp watch` in another termial tab to bundle up the javascript files, run sass etc.
 
 
+# Emulating Android on Mac
+
+### via Cordova
+- Install Java for Mac OSX (http://www.java.com/en/download/mac_download.jsp).
+- Download the Android SDK (http://developer.android.com/sdk/installing/index.html?pkg=tools).
+- Open the Android SDK. Navigate to tools. Run android. 
+	- If it errors ['To view this web content, you need to...''], download the legacy Java SE 6 runtime (https://support.apple.com/kb/DL1572?locale=en_US).
+- Android SDK Tools should appear as Installed. Install your desired Android SDK Platform(s), Android SDK Build Tools (>= v19.1.0), and Android Support Repository (Extras).
+- Update PATH in ~./bash_profile to point to the android SDK, e.g. export PATH=${PATH}:/Users/<CohaesusEmployee>/Development/android-sdk/platform-tools:/Users/<CohaesusEmployee>/Development/android-sdk/tools ()
+- Save and then run this in your terminal: $ source ~/.bash_profile 
+- Configure your Android devices via Tools > Manage AVDs in the Android SDK. 
+
+### via GenyMotion (recommended)
+- Create and verify a Genymotion account (https://www.genymotion.com)
+- Download Genymotion (https://www.genymotion.com/download/)
+- Drag Genymotion into the Applications folder (Genymotion shell optional), then launch. 
+- Add your desired devices to the program. Double click a device to launch (alternatively, highlight and press Start).
+- In your terminal, use the following command (with your device open in Genymotion): $ ionic run android
+
+
 # API
 - You will need node.js, if you don't have it already,  for the backend API
 - You will also the express framework for node 

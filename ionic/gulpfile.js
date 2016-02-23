@@ -1,25 +1,32 @@
-var gulp = require('gulp');
-var gutil = require('gulp-util');
-var bower = require('bower');
-var concat = require('gulp-concat');
-var sass = require('gulp-sass');
-var minifyCss = require('gulp-minify-css');
-var rename = require('gulp-rename');
-var sh = require('shelljs');
-var browserify = require('gulp-browserify');
-var uglify = require('gulp-uglify');
-var cucumber = require('gulp-cucumber');
-var ngAnnotate = require('gulp-ng-annotate');
+var gulp = require('gulp'),
+    gutil = require('gulp-util'),
+    bower = require('bower'),
+    concat = require('gulp-concat'),
+    sass = require('gulp-sass'),
+    minifyCss = require('gulp-minify-css'),
+    rename = require('gulp-rename'),
+    sh = require('shelljs'),
+    browserify = require('gulp-browserify'),
+    uglify = require('gulp-uglify'),
+    cucumber = require('gulp-cucumber'),
+    ngAnnotate = require('gulp-ng-annotate');
 
+
+// Shortcut paths to locate js and sass files
 var paths = {
   sass: ['./scss/**/*.scss'],
   js: ['./www/js/*.js']
 };
 
-gulp.task('default', ['sass', '']);
 
+// Default Task
+// Running the default task will create the dist js and css files, which are referenced in index.html
+gulp.task('default', ['sass', 'scripts']);
+
+
+// Sass compiler 
 gulp.task('sass', function(done) {
-  gulp.src('./scss/ionic.app.scss')
+  gulp.src('./scss/main.scss')
     .pipe(sass())
     .on('error', sass.logError)
     .pipe(gulp.dest('./www/dist/css/'))
@@ -30,28 +37,32 @@ gulp.task('sass', function(done) {
     .on('end', done);
 });
 
+
+// The scripts task bundles www/js/app.js with all variables declared at the top of it's page.
+// The resulting app.js file is piped to dist/js, along with a minified version (which is cited in index.html)
 gulp.task('scripts', function() {
-  
-  // Uses app.js as a single entry point to determine module dependancies. 
-  // ToDo: Add uniminified js file to the dist js folder
   gulp.src(['./www/js/app.js'])
     .pipe(browserify({
       insertGlobals : true
     }))
     .pipe(ngAnnotate())
+    .on('error', scripts.logError)
     .pipe(gulp.dest('./www/dist/js/'))
 
     .pipe(uglify()) 
     .pipe(rename({ extname: '.min.js' }))
     .pipe(gulp.dest('./www/dist/js/'))
-
 });
 
+
+// The Watch task looks for any changes to the js and css files in www, then recompiles the .min scripts in dist.
 gulp.task('watch', function() {
   gulp.watch(paths.sass, ['sass']);
   gulp.watch(paths.js, ['scripts'])
 });
 
+
+// Install task
 gulp.task('install', ['git-check'], function() {
   return bower.commands.install()
     .on('log', function(data) {
@@ -59,6 +70,8 @@ gulp.task('install', ['git-check'], function() {
     });
 });
 
+
+// Git-check task
 gulp.task('git-check', function(done) {
   if (!sh.which('git')) {
     console.log(
@@ -72,6 +85,8 @@ gulp.task('git-check', function(done) {
   done();
 });
 
+
+// Cucumber task 
 gulp.task('cucumber', function() {
     return gulp.src('/features/*').pipe(cucumber({
         'steps': '/features/step_definitions/*_steps.js',
