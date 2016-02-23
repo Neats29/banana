@@ -1,4 +1,5 @@
 # banana
+Please note the live branch is 'Develop'
 
 To start please clone the project and install the following:
 - `npm install -g gulp, bower, cucumber, cordova ionic, strongloop`
