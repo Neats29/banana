@@ -1,0 +1,35 @@
+    <ion-view view-title="FormTest">  
+     
+      <ion-content class="padding">
+       
+        <h2 style="text-align: center;">Form validation example</h2><br/>
+         
+        <form name="form" novalidate="" ng-controller="FormCtrl" ng-submit="signIn(employee)"> 
+         
+          <div class="list">
+           
+            <label class="item item-input">
+              <span class="input-label">Forename</span>
+              <input type="text" name="forename" ng-model="employee.forename" ng-minlength="5" ng-maxlength="20" value="Jamal">
+            </label>
+            <label class="item item-input">
+              <span class="input-label">Lastname</span>
+              <input type="text" name="lastname" ng-model="employee.lastname" ng-minlength="5" ng-maxlength="20" value="Osman">
+            </label>
+            <label class="item item-input">
+              <span class="input-label">Email</span>
+              <input type="text" name="email" ng-model="employee.email" ng-minlength="5" ng-maxlength="256" value="jamal.osman@company.io">
+            </label>
+
+             
+          </div>     
+           
+          <button class="button button-full button-positive" type="submit">
+            Sign In
+          </button>
+             
+        </form>   
+         
+      </ion-content>
+       
+    </ion-view>

@@ -3,7 +3,8 @@
   "version": "1.1.1",
   "description": "ionic_experiment: An Ionic project",
   "dependencies": {
-    "angular-ui-bootstrap": "file:node_modules/angular-ui-bootstrap",
+    "angular-resource": "^1.5.0",
+    "angular-ui-bootstrap": "^1.1.2",
     "bootstrap": "^3.3.6",
     "gulp": "^3.9.1",
     "gulp-concat": "^2.2.0",
