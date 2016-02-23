@@ -64,10 +64,12 @@ angular.module('starter.controllers', ['ionic','lbServices'])
       }
   }; 
 })
-.controller('ProfileCtrl', function($scope, $http) {
+
+.controller('createProfileCtrl', function($scope, $http, Employee) {
   $scope.single = function(image) {
     var formData = new FormData();
     formData.append('image', image, image.name);
+    console.log(formData);
     $http.post('upload', formData, {
         headers: { 'Content-Type': false },
         transformRequest: angular.identity
@@ -75,4 +77,20 @@ angular.module('starter.controllers', ['ionic','lbServices'])
         $scope.uploadedImgSrc = result.src;
     });
   };
-});
+  
+  $scope.createEmployee = function(employee, imageURL) {
+    var newEmployee =  {
+      firstname: employee.firstname,
+      lastname: employee.lastname,
+      email: employee.email,
+      phoneNumber: employee.phoneNumber,
+      skills: employee.skills.split(',').map(function(skill){
+        skill = skill.trim();
+        return skill;
+      }),
+      username: null,
+      image: imageURL
+    };
+    Employee.create(newEmployee);
+  };
+})
