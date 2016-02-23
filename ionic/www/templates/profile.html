@@ -5,8 +5,10 @@
  <ion-content>
    <form ng-submit="" enctype="multipart/form-data" method="POST" action="http://banana-onbaord.herokuapp.com/api/employees
 ">   
-     <input id="inputImage" type="file" accept="image/*" image="image" />
-        <img ng-show="image" ng-src="{{image.url}}" type="{{image.file.type}}" style="width:200px;height:auto" capture="camera" accept="image/png, image/jpeg, image/gif"/> 
+      <div class="upload-wrapper">
+       <input id="inputImage" type="file" accept="image/jpeg, image/png, img/gif" image="image" capture="camera"/>
+        <img ng-show="image" ng-src="{{image.url}}" type="{{image.file.type}}" style="width:200px;height:auto" />
+      </div>
             
       <div class="list">
         <label class="item item-input">
