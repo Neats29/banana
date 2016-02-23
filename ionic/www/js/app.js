@@ -6,12 +6,16 @@
 // 'starter.controllers' is found in controllers.js
 
 // To transform the sources, Browserify starts at one CommonJS module (the entry point [App.js]) and follows all require statements in this module. 
+// The entry point and all dependencies are transferred into the bundle. The require statements in the dependencies are also resolved and included into the bundle. 
+// This process is continued recursively until all require statements have been processed and the bundle is complete.
+var models = require('./models/lb-services.js');
 var controllers = require('./controllers.js');
-var upload = require('./upload.js');
+var ngResource = require('../../node_modules/angular-resource/angular-resource.min.js')
 var bootstrap = require('../../node_modules/angular-ui-bootstrap/dist/ui-bootstrap-tpls.js');
 var profileUpload = require('./profileUpload.js');
+var upload = require('./upload.js');
 
-angular.module('starter', ['ionic', 'upload', 'starter.controllers', 'ui.bootstrap', 'profileUpload'])
+angular.module('starter', ['ionic', 'upload', 'starter.controllers', 'ui.bootstrap', 'lbServices'])
 
 .controller ('MainController', function ($scope) {} )
 
@@ -31,7 +35,7 @@ angular.module('starter', ['ionic', 'upload', 'starter.controllers', 'ui.bootstr
   });
 })
 
-.config(function($stateProvider, $urlRouterProvider) {
+.config(function($stateProvider, $urlRouterProvider, LoopBackResourceProvider) {
   $stateProvider
 
     .state('app', {
@@ -67,7 +71,14 @@ angular.module('starter', ['ionic', 'upload', 'starter.controllers', 'ui.bootstr
         }
       }
     })
-
+  .state('app.formtest', {
+    url: '/formtest',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/formtest.html',
+      }
+    }
+  })
   .state('app.single', {
     url: '/playlists/:playlistId',
     views: {
@@ -87,6 +98,10 @@ angular.module('starter', ['ionic', 'upload', 'starter.controllers', 'ui.bootstr
       }
     }
   });
+//
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/app/playlists');
+
+  // Change the URL where to access the LoopBack REST API server
+  LoopBackResourceProvider.setUrlBase('http://banana-onbaord.herokuapp.com/api');
 });

@@ -1,10 +1,10 @@
 # banana
 
+To start please clone the project and install the following:
+- `npm install -g gulp, bower, cucumber, cordova ionic, strongloop`
+- `npm install` (to get all the dependencies)
+
 # Mobile App
-- Install ionic 
-```{engine='bash'}
-$ npm install -g cordova ionic
-```
 
 - In order for ionic to work with android you will need the following
 	- Install the [Android SDK](http://developer.android.com/sdk/installing/index.html?pkg=tools)
@@ -42,7 +42,6 @@ $ npm install -g cordova ionic
 - You will also the express framework for node 
 	- ``` $ npm install express --save ```
 - You will also need loopback for creating your APIs quickly
-	- ```$ npm install -g strongloop ```
 	- ``` slc loopback ```
 	- To access the gui editor for making your models type:
 		- ``` slc arc ```
@@ -62,7 +61,6 @@ For Testing we are using the following:
 - [mocha](https://www.npmjs.com/package/mocha): a popular assertion library in JS.
 
 ### Doing tests:
-0. Run `$ npm install -g cucumber `
 1. Write your gherkin tests in `ionic/features/*.feature`
 2. then create a JS file in step_definition with the same name underscore steps.js (see example in features folder)
 3. run `gulp cucumber`, you could also run `cucumber.js`

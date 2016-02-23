@@ -15,7 +15,7 @@ var gulp = require('gulp'),
 // Shortcut paths to locate js and sass files
 var paths = {
   sass: ['./scss/**/*.scss'],
-  js: ['./www/js/*.js']
+  js: ['./www/js/**/*.js']
 };
 
 
