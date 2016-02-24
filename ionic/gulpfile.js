@@ -24,13 +24,13 @@ var paths = {
 gulp.task('default', ['sass', 'scripts']);
 
 
-// Sass compiler 
+// Sass compiler
 gulp.task('sass', function(done) {
   gulp.src('./scss/main.scss')
     .pipe(sass())
     .on('error', sass.logError)
     .pipe(gulp.dest('./www/dist/css/'))
-    
+
     .pipe(minifyCss({keepSpecialComments: 0}))
     .pipe(rename({ extname: '.min.css' }))
     .pipe(gulp.dest('./www/dist/css/'))
@@ -38,8 +38,8 @@ gulp.task('sass', function(done) {
 });
 
 
-// The scripts task bundles www/js/app.js with all variables declared at the top of it's page.
-// The resulting app.js file is piped to dist/js, along with a minified version (which is cited in index.html)
+// The scripts task bundles www/js/app.js with all variables - and their respective dependancies - declared at the top of it's page.
+// The resulting app.js file is piped to dist/js, along with a minified version (app.min.js), which is referenced in index.html.
 gulp.task('scripts', function() {
   gulp.src(['./www/js/app.js'])
     .pipe(browserify({
@@ -49,7 +49,7 @@ gulp.task('scripts', function() {
     .on('error', scripts.logError)
     .pipe(gulp.dest('./www/dist/js/'))
 
-    .pipe(uglify()) 
+    .pipe(uglify())
     .pipe(rename({ extname: '.min.js' }))
     .pipe(gulp.dest('./www/dist/js/'))
 });
@@ -86,7 +86,7 @@ gulp.task('git-check', function(done) {
 });
 
 
-// Cucumber task 
+// Cucumber task
 gulp.task('cucumber', function() {
     return gulp.src('/features/*').pipe(cucumber({
         'steps': '/features/step_definitions/*_steps.js',
