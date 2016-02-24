@@ -5,9 +5,9 @@
 To start, please clone the project (ToDo: Add URL) and install the following:
 - `$ npm install -g gulp, bower, cucumber, cordova ionic, strongloop`
 - `$ npm install` (to get all the dependencies).
-- Run `$ gulp` (Default task) to generate your dist folder in ionic/www.
+- Run `$ gulp` (Default task) to generate your dist folder in ionic/www
 
-To create a new project, you can follow Ionic's installation guide: (http://ionicframework.com/docs/guide/installation.html)
+To create a new project, you can follow Ionic's [installation guide] (http://ionicframework.com/docs/guide/installation.html)
 
 
 ## Configure Platforms
@@ -32,20 +32,20 @@ URL: http://cordova.apache.org/docs/en/3.4.0/guide/platforms/android/index.html#
 ### Android
 #### via Cordova
 - Make sure [Java for Mac OSX] (http://www.java.com/en/download/mac_download.jsp) and the [Android SDK] (http://developer.android.com/sdk/installing/index.html?pkg=tools) are installed.
-- Open the Android SDK. Navigate to tools. Run android - If it errors ['To view this web content, you need to...'], download the legacy Java SE 6 runtime (https://support.apple.com/kb/DL1572?locale=en_US)).
+- Open the Android SDK. Navigate to tools. Run android - If it errors ['To view this web content, you need to...'], download the legacy [Java SE 6 runtime] (https://support.apple.com/kb/DL1572?locale=en_US)).
 - Install your desired Android SDK Platform(s), Android SDK Tools, Android SDK Build Tools (>= v19.1.0), SDK Platform Tools and Android Support Repository (found in Extras).
-- Update PATH in ~./bash_profile to point to the android SDK, e.g. export PATH=${PATH}:/Users/<CohaesusEmployee>/Development/android-sdk-macosx/platform-tools:/Users/<CohaesusEmployee>/Development/android-sdk-macosx/tools ()
-- Save and then run this in your terminal: ```$ source ~/.bash_profile```
+- Update PATH in ~./bash_profile to point to the android SDK, e.g. export PATH=${PATH}:/Users/CohaesusEmployee/Development/android-sdk-macosx/platform-tools:/Users/CohaesusEmployee/Development/android-sdk-macosx/tools ()
+- Save and then run this in your terminal: `$ source ~/.bash_profile`
 - Configure your Android devices via Tools > Manage AVDs in the Android SDK.
-- Inside your ionic folder, build the app via the terminal ```$ ionic build android```
-- Emulate the build ``` $ ionic emulate android ```
+- Inside your ionic folder, build the app via the terminal `$ ionic build android`
+- Emulate the build `$ ionic emulate android`
 
 #### via GenyMotion [recommended]
-- Create and verify a Genymotion account (https://www.genymotion.com)
-- Download and install Genymotion (https://www.genymotion.com/download/)
+- Create and verify a [Genymotion] (https://www.genymotion.com) account.
+- [Download] (https://www.genymotion.com/download/) and install Genymotion.
 - Add your desired devices to the program. Double click a device to launch (alternatively, highlight and press Start).
-- Inside your ionic folder, build the app via the terminal ```$ ionic build android```
-- Emulate the build (with your device open in Genymotion) ``` $ ionic run android ```
+- Inside your ionic folder, build the app via the terminal `$ ionic build android`
+- Emulate the build (with your device open in Genymotion) `$ ionic run android `
 
 
 ## API
