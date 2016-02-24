@@ -2,25 +2,28 @@ angular.module('upload', [])
   .directive('image', function($q) {
     'use strict';
     var URL = window.URL || window.webkitURL;
-    var base64Encoded;
+    var base64Encoded;  
     var createImage = function(url, callback) {
       var image = new Image();
+      image.src = url;3
+      
       image.onload = function() {
         callback(image);
       };
-      image.src = url;
     };
     
     var fileToDataURL = function (file) {
-      console.log(file);
       var deferred = $q.defer();
       var reader = new FileReader();
+      
+      
+      reader.readAsDataURL(file);
+      
       reader.onload = function (event) {
           deferred.resolve(event.target.result);
           base64Encoded = event.currentTarget.result;
         console.log(base64Encoded);
       };
-      reader.readAsDataURL(file);
       return deferred.promise;
     };
 

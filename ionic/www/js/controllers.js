@@ -65,7 +65,7 @@ angular.module('starter.controllers', ['ionic','lbServices'])
   }; 
 })
 
-.controller('createProfileCtrl', function($scope, $http, Employee) {
+.controller('CreateProfileCtrl', function($scope, $http, Employee) {
   $scope.single = function(image) {
     var formData = new FormData();
     formData.append('image', image, image.name);
@@ -92,5 +92,12 @@ angular.module('starter.controllers', ['ionic','lbServices'])
       image: imageURL
     };
     Employee.create(newEmployee);
+//    window.localStorage.employee = JSON.stringify(newEmployee);
+//    var localStorageEmployee = JSON.parse(window.localStorage['employee'] || '{}');
+//    console.log(localStorageEmployee);
   };
 })
+
+//.controller('ReadProfileCtrl', function($scope){
+//  Employee.find();
+//})

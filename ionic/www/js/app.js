@@ -95,20 +95,20 @@ angular.module('starter', ['ionic', 'upload', 'starter.controllers', 'ui.bootstr
     views: {
       'menuContent': {
         templateUrl: 'templates/profile.html',
-        controller: 'createProfileCtrl'
+        controller: 'CreateProfileCtrl'
       }
     }
   })
-//  .state('app.profile', {
-//    url: '/profile/{username}',
-//    views: {
-//      'menuContent': {
-//        templateUrl: 'templates/profile.html',
-//        controller: 'GetProfileCtrl'
-//      }
-//    }
-//  })
-//
+  .state('app.readProfile', {
+    url: '/profile/{username}',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/profile.html',
+        controller: 'ReadProfileCtrl'
+      }
+    }
+  })
+
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/app/playlists');
 
