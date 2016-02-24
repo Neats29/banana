@@ -12,9 +12,9 @@ To create a new project, you can follow Ionic's [installation guide] (http://ion
 
 ## Configure Platforms
 
-[iOS] (http://cordova.apache.org/docs/en/3.4.0/guide/platforms/ios/index.html#iOS%20Platform%20Guide) (Mac only)
+[***iOS***] (http://cordova.apache.org/docs/en/3.4.0/guide/platforms/ios/index.html#iOS%20Platform%20Guide) (Mac only)
 
-[Android] (http://cordova.apache.org/docs/en/3.4.0/guide/platforms/android/index.html#Android%20Platform%20Guide)
+[***Android***] (http://cordova.apache.org/docs/en/3.4.0/guide/platforms/android/index.html#Android%20Platform%20Guide)
 
 
 ## Emulation
