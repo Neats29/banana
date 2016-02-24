@@ -21,7 +21,7 @@ To create a new project, you can follow Ionic's [installation guide] (http://ion
 ## Emulation
 ### Browser (live reload)
 - In your ionic folder run `$ ionic serve` from the terminal.
-- The Gulp Watch task will automatically run when you use the broswer emulation. When changes made to any HTML, CSS, or JavaScript files are saved, Gulp will recompile your dist files and then automatically reload the browser.
+- The Gulp Watch task will automatically run when you use the browser emulation. When changes made to any HTML, CSS, or JavaScript files are saved, Gulp will recompile your dist files and then automatically reload the browser.
 
 ### iOS
 - Mac only
