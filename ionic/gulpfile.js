@@ -9,8 +9,7 @@ var gulp = require('gulp'),
     browserify = require('gulp-browserify'),
     uglify = require('gulp-uglify'),
     cucumber = require('gulp-cucumber'),
-    ngAnnotate = require('gulp-ng-annotate');
-
+    ngAnnotate = require('gulp-ng-annotate'),
 
 // Shortcut paths to locate js and sass files
 var paths = {
