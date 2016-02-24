@@ -2,10 +2,11 @@
 ==================
 
 ## Setup
-To start, please clone the project (ToDo: Add URL) and install the following:
+To start, please clone the project and install the following:
 - `$ npm install -g gulp, bower, cucumber, cordova ionic, strongloop`
-- `$ npm install` (to get all the dependencies).
-- Run `$ gulp` (Default task) to generate your dist folder in ionic/www
+- `$ npm install` (to get all the dependencies)
+
+Run `$ gulp` (Default task) to generate your dist folder in ionic/www
 
 To create a new project, you can follow Ionic's [installation guide] (http://ionicframework.com/docs/guide/installation.html).
 
