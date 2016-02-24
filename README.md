@@ -7,16 +7,14 @@ To start, please clone the project (ToDo: Add URL) and install the following:
 - `$ npm install` (to get all the dependencies).
 - Run `$ gulp` (Default task) to generate your dist folder in ionic/www
 
-To create a new project, you can follow Ionic's [installation guide] (http://ionicframework.com/docs/guide/installation.html)
+To create a new project, you can follow Ionic's [installation guide] (http://ionicframework.com/docs/guide/installation.html).
 
 
 ## Configure Platforms
 
-### iOS (Mac only)
-URL: http://cordova.apache.org/docs/en/3.4.0/guide/platforms/ios/index.html#iOS%20Platform%20Guide
+### [iOS] (http://cordova.apache.org/docs/en/3.4.0/guide/platforms/ios/index.html#iOS%20Platform%20Guide) (Mac only)
 
-### Android
-URL: http://cordova.apache.org/docs/en/3.4.0/guide/platforms/android/index.html#Android%20Platform%20Guide
+### [Android] (http://cordova.apache.org/docs/en/3.4.0/guide/platforms/android/index.html#Android%20Platform%20Guide)
 
 
 ## Emulation
