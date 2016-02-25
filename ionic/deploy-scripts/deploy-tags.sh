@@ -19,7 +19,7 @@ MESSAGE="Starting build $new_tag"
 
 echo $(curl \
 	-v -L -G \
-	-d "room_id=$ROOM_ID&from=HockeyApp"	\
+	-d "room_id=$ROOM_ID&from=IonicApp"	\
 	--data-urlencode "message=$MESSAGE"	\
 	"https://api.hipchat.com/v1/rooms/message?auth_token=${AUTH_TOKEN}&format=json"
 	)
