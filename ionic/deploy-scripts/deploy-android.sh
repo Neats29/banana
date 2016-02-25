@@ -10,7 +10,7 @@ response=$(curl \
   -F "notify=1" \
   -F "notes=Version v$current_tag" \
   -F "ipa=@../platforms/android/outputs/apk/android-release-unsigned.apk" \
-  -H "X-HockeyAppToken:c1bd646b19644552a974e48cc9ad2616" \
+  -H "X-HockeyAppToken:62ba048fb5fc4151b39d7f56a9b56b0f" \
   https://rink.hockeyapp.net/api/2/apps/upload)
 
 echo $response
