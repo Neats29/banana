@@ -33,6 +33,10 @@ cat ../platforms/android/AndroidManifest.xml | sed -e "s/android:versionName\=\"
 rm ../platforms/android/AndroidManifest.xml
 mv ../platforms/android/AndroidManifest.temp.xml ../platforms/android/AndroidManifest.xml
 
+cat ../config.xml | sed -e "s/version\=\"[0-9.]*\"/version\=\"$new_tag\"/g" > ../config.temp.xml
+rm ../config.xml
+mv ../config.temp.xml ../config.xml
+
 # change the version in iOS Info.plist
 # /usr/libexec/PlistBuddy -c "Set CFBundleVersion 0.1.$new_tag" src/Moleskin.iOS/Info.plist
 # /usr/libexec/PlistBuddy -c "Set CFBundleShortVersionString 0.1.$new_tag" src/Moleskin.iOS/Info.plist
