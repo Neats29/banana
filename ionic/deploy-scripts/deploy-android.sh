@@ -31,26 +31,3 @@ echo $(curl \
 	--data-urlencode "message=$MESSAGE"	\
 	"https://api.hipchat.com/v1/rooms/message?auth_token=${AUTH_TOKEN}&format=json"
 	)
-
-
-
-  {"apps":[{
-    "title":"ionic_experiment",
-    "bundle_identifier":"com.ionicframework.ionicexperiment798537",
-    "public_identifier":"26809419b03d4fc880dcc3334a71851f",
-    "platform":"Android",
-    "release_type":0,
-    "custom_release_type":null,
-    "created_at":"2016-02-24T14:08:38Z",
-    "updated_at":"2016-02-25T11:14:49Z",
-    "featured":false,
-    "id":289488,
-    "minimum_os_version":"4.1",
-    "device_family":null,
-    "status":2,
-    "visibility":"private",
-    "owner":"Andrew Dick",
-    "owner_token":"505913c2abecca01d7fc88988d09651759bb2e9d",
-    "company":"Cohaesus"}],
-
-    "status":"success"}
