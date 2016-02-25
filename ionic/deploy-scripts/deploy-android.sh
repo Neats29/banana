@@ -4,9 +4,6 @@
 current_tag=$(git describe --abbrev=0 --tags)
 echo "Current tag: $current_tag"
 
-# directory=$PWD
-# cd ../platforms/android/build/outputs/apk
-
 echo $directory
 # push the app to HockeyApp
 # API parameters: http://support.hockeyapp.net/kb/api/api-apps#upload-app
@@ -19,8 +16,6 @@ response=$(curl \
   https://rink.hockeyapp.net/api/2/apps/26809419b03d4fc880dcc3334a71851f/app_versions/upload)
 
 echo '{"status"; "notify"; "notes"; "ipa"; "X-HockeyAppToken:"}' | python -m json.tool
-
-# cd $directory
 
 publink=$(echo $response)
 
