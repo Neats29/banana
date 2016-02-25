@@ -18,7 +18,7 @@ response=$(curl \
   -H "X-HockeyAppToken:62ba048fb5fc4151b39d7f56a9b56b0f" \
   https://rink.hockeyapp.net/api/2/apps/26809419b03d4fc880dcc3334a71851f/app_versions/upload)
 
-echo $response
+echo '{"status"; "notify"; "notes"; "ipa"; "X-HockeyAppToken:"}' | python -m json.tool
 
 # cd $directory
 
