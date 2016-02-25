@@ -11,11 +11,11 @@ response=$(curl \
   -F "status=2" \
   -F "notify=1" \
   -F "notes=Version v$current_tag" \
+  -F "bundle_version=$current_tag" \
+  -F "bundle_short_version=0.1.$current_tag" \
   -F "ipa=@../platforms/android/build/outputs/apk/android-release-unsigned.apk" \
   -H "X-HockeyAppToken:62ba048fb5fc4151b39d7f56a9b56b0f" \
   https://rink.hockeyapp.net/api/2/apps/26809419b03d4fc880dcc3334a71851f/app_versions/upload)
-
-echo '{"status"; "notify"; "notes"; "ipa"; "X-HockeyAppToken:"}' | python -m json.tool
 
 publink=$(echo $response)
 
