@@ -33,9 +33,25 @@ cat ../platforms/android/AndroidManifest.xml | sed -e "s/android:versionName\=\"
 rm ../platforms/android/AndroidManifest.xml
 mv ../platforms/android/AndroidManifest.temp.xml ../platforms/android/AndroidManifest.xml
 
-cat ../config.xml | sed -e "s/version\=\"[0-9.]*\"/version\=\"$new_tag\"/g" > ../config.temp.xml
-rm ../config.xml
-mv ../config.temp.xml ../config.xml
+# manifests (release)
+cat ../platforms/android/build/intermediates/manifests/full/release/AndroidManifest.xml | sed -e "s/android:versionCode\=\"[0-9]*\"/android:versionCode\=\"$new_tag\"/g" > ../platforms/android/build/intermediates/manifests/full/release/AndroidManifest.temp.xml
+rm ../platforms/android/build/intermediates/manifests/full/release/AndroidManifest.xml
+mv ../platforms/android/build/intermediates/manifests/full/release/AndroidManifest.temp.xml ../platforms/android/build/intermediates/manifests/full/release/AndroidManifest.xml
+
+cat ../platforms/android/build/intermediates/manifests/full/release/AndroidManifest.xml | sed -e "s/android:versionName\=\"[0-9.]*\"/android:versionName\=\"0.1.$new_tag\"/g" > ../platforms/android/build/intermediates/manifests/full/release/AndroidManifest.temp.xml
+rm ../platforms/android/build/intermediates/manifests/full/release/AndroidManifest.xml
+mv ../platforms/android/build/intermediates/manifests/full/release/AndroidManifest.temp.xml ../platforms/android/build/intermediates/manifests/full/release/AndroidManifest.xml
+
+# manifests (debug)
+cat ../platforms/android/build/intermediates/manifests/full/debug/AndroidManifest.xml | sed -e "s/android:versionCode\=\"[0-9]*\"/android:versionCode\=\"$new_tag\"/g" > ../platforms/android/build/intermediates/manifests/full/debug/AndroidManifest.temp.xml
+rm ../platforms/android/build/intermediates/manifests/full/debug/AndroidManifest.xml
+mv ../platforms/android/build/intermediates/manifests/full/debug/AndroidManifest.temp.xml ../platforms/android/build/intermediates/manifests/full/debug/AndroidManifest.xml
+
+cat ../platforms/android/build/intermediates/manifests/full/debug/AndroidManifest.xml | sed -e "s/android:versionName\=\"[0-9.]*\"/android:versionName\=\"0.1.$new_tag\"/g" > ../platforms/android/build/intermediates/manifests/full/debug/AndroidManifest.temp.xml
+rm ../platforms/android/build/intermediates/manifests/full/debug/AndroidManifest.xml
+mv ../platforms/android/build/intermediates/manifests/full/debug/AndroidManifest.temp.xml ../platforms/android/build/intermediates/manifests/full/debug/AndroidManifest.xml
+
+
 
 # change the version in iOS Info.plist
 # /usr/libexec/PlistBuddy -c "Set CFBundleVersion 0.1.$new_tag" src/Moleskin.iOS/Info.plist
