@@ -25,7 +25,7 @@ cat ../config.xml | sed -e "s/version=\"[0-9]*\"/version\=\"$new_tag\"/g" > ../c
 rm ../config.xml
 mv ../config.temp.xml ../config.xml
 
-cat ../config.xml | sed -e "s/android-versionCode\=\"[0-9.]*\"/android-versionCode\=\"0.1.$new_tag\"/g" > ../config.temp.xml
+cat ../config.xml | sed -e "s/versionCode\=\"[0-9.]*\"/android-versionCode\=\"0.1.$new_tag\"/g" > ../config.temp.xml
 rm ../config.xml
 mv ../config.temp.xml ../config.xml
 
