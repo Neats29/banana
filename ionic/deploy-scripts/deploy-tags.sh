@@ -20,33 +20,14 @@ echo $(curl \
 	"https://api.hipchat.com/v1/rooms/message?auth_token=${AUTH_TOKEN}&format=json"
 	)
 
-# change the version name and code in Android Manifest
-cat ../platforms/android/AndroidManifest.xml | sed -e "s/android:versionCode\=\"[0-9]*\"/android:versionCode\=\"$new_tag\"/g" > ../platforms/android/AndroidManifest.temp.xml
-rm ../platforms/android/AndroidManifest.xml
-mv ../platforms/android/AndroidManifest.temp.xml ../platforms/android/AndroidManifest.xml
+#change the version name and code in config.xml
+cat ../config.xml | sed -e "s/version=\"[0-9]*\"/version\=\"$new_tag\"/g" > ../config.temp.xml
+rm ../config.xml
+mv ../config.temp.xml ../config.xml
 
-cat ../platforms/android/AndroidManifest.xml | sed -e "s/android:versionName\=\"[0-9.]*\"/android:versionName\=\"0.1.$new_tag\"/g" > ../platforms/android/AndroidManifest.temp.xml
-rm ../platforms/android/AndroidManifest.xml
-mv ../platforms/android/AndroidManifest.temp.xml ../platforms/android/AndroidManifest.xml
-
-# manifests (release)
-cat ../platforms/android/build/intermediates/manifests/full/release/AndroidManifest.xml | sed -e "s/android:versionCode\=\"[0-9]*\"/android:versionCode\=\"$new_tag\"/g" > ../platforms/android/build/intermediates/manifests/full/release/AndroidManifest.temp.xml
-rm ../platforms/android/build/intermediates/manifests/full/release/AndroidManifest.xml
-mv ../platforms/android/build/intermediates/manifests/full/release/AndroidManifest.temp.xml ../platforms/android/build/intermediates/manifests/full/release/AndroidManifest.xml
-
-cat ../platforms/android/build/intermediates/manifests/full/release/AndroidManifest.xml | sed -e "s/android:versionName\=\"[0-9.]*\"/android:versionName\=\"0.1.$new_tag\"/g" > ../platforms/android/build/intermediates/manifests/full/release/AndroidManifest.temp.xml
-rm ../platforms/android/build/intermediates/manifests/full/release/AndroidManifest.xml
-mv ../platforms/android/build/intermediates/manifests/full/release/AndroidManifest.temp.xml ../platforms/android/build/intermediates/manifests/full/release/AndroidManifest.xml
-
-# manifests (debug)
-cat ../platforms/android/build/intermediates/manifests/full/debug/AndroidManifest.xml | sed -e "s/android:versionCode\=\"[0-9]*\"/android:versionCode\=\"$new_tag\"/g" > ../platforms/android/build/intermediates/manifests/full/debug/AndroidManifest.temp.xml
-rm ../platforms/android/build/intermediates/manifests/full/debug/AndroidManifest.xml
-mv ../platforms/android/build/intermediates/manifests/full/debug/AndroidManifest.temp.xml ../platforms/android/build/intermediates/manifests/full/debug/AndroidManifest.xml
-
-cat ../platforms/android/build/intermediates/manifests/full/debug/AndroidManifest.xml | sed -e "s/android:versionName\=\"[0-9.]*\"/android:versionName\=\"0.1.$new_tag\"/g" > ../platforms/android/build/intermediates/manifests/full/debug/AndroidManifest.temp.xml
-rm ../platforms/android/build/intermediates/manifests/full/debug/AndroidManifest.xml
-mv ../platforms/android/build/intermediates/manifests/full/debug/AndroidManifest.temp.xml ../platforms/android/build/intermediates/manifests/full/debug/AndroidManifest.xml
-
+cat ../config.xml | sed -e "s/android-versionCode\=\"[0-9.]*\"/android-versionCode\=\"0.1.$new_tag\"/g" > ../config.temp.xml
+rm ../config.xml
+mv ../config.temp.xml ../config.xml
 
 
 # change the version in iOS Info.plist
