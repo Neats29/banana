@@ -12,18 +12,20 @@ angular.module('upload', [])
                 callback(image);
             };
         };
+        var extension;
 
         var fileToDataURL = function (file) {
             var deferred = $q.defer();
             var reader = new FileReader();
-
-
+            extension = file.name.split('.').pop();
+            console.log(extension);
+            console.log('file', file);
             reader.readAsDataURL(file);
 
             reader.onload = function (event) {
                 deferred.resolve(event.target.result);
                 base64Encoded = event.currentTarget.result;
-                console.log(base64Encoded);
+                console.log(event);
             };
             return deferred.promise;
         };
@@ -33,6 +35,7 @@ angular.module('upload', [])
                 var applyScope = function (imageResult) {
                     scope.$apply(function () {
                         scope.image = imageResult;
+                        imageResult.extension = extension
                     });
                 };
 
@@ -44,8 +47,11 @@ angular.module('upload', [])
                     };
 
                     fileToDataURL(files[0]).then(function (dataURL) {
-                        imageResult.dataURL = dataURL;
-                        saveImageToFile(dataURL);
+                        if (dataURL.indexOf('data:image') == -1) {
+                            dataURL = dataURL.replace('data:', 'data:image/' + extension + ';');
+                        }
+                        imageResult.dataURL = dataURL
+                        console.log(dataURL);
                     });
                     applyScope(imageResult);
                 });

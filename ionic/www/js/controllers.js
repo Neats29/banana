@@ -77,13 +77,9 @@ angular.module('starter.controllers', ['ionic', 'lbServices'])
             Employee.create(employee);
         }
     };
-
-    $scope.trustSrc = function (src) {
-        return $sce.trustAsResourceUrl(src);
-    }
 })
 
-.controller('CreateProfileCtrl', function ($scope, Employee) {
+.controller('CreateProfileCtrl', function ($scope, Employee, $location) {
     $scope.single = function (image) {
         var formData = new FormData();
         formData.append('image', image, image.name);
@@ -99,6 +95,7 @@ angular.module('starter.controllers', ['ionic', 'lbServices'])
     };
 
     $scope.createEmployee = function (employee, imageURL) {
+
         var newEmployee = {
             firstname: employee.firstname,
             lastname: employee.lastname,

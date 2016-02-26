@@ -14,9 +14,9 @@ var controllers = require('./controllers.js');
 var ngResource = require('../../node_modules/angular-resource/angular-resource.min.js')
 var bootstrap = require('../../node_modules/angular-ui-bootstrap/dist/ui-bootstrap-tpls.js');
 var upload = require('./upload.js');
+var ngCordova = require('../../node_modules/ng-cordova/dist/ng-cordova.js')
 
-
-angular.module('starter', ['ionic', 'upload', 'starter.controllers', 'ui.bootstrap', 'lbServices'])
+angular.module('starter', ['ionic', 'upload', 'starter.controllers', 'ui.bootstrap', 'lbServices', 'ngCordova'])
 
 .controller('MainController', function ($scope) {})
 
