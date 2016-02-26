@@ -12,8 +12,8 @@ response=$(curl \
   -F "notify=1" \
   -F "notes=Version v$current_tag" \
   -F "ipa=@../platforms/ios/-0.1.$current_tag.ipa" \
-  -H "X-HockeyAppToken: 246d8333b0e64768aa850cef95c60b73" \
-  https://rink.hockeyapp.net/api/2/apps/f3426a4a10e0188e7690f9b094392fec/app_versions/upload)
+  -H "X-HockeyAppToken: 62ba048fb5fc4151b39d7f56a9b56b0f" \
+  https://rink.hockeyapp.net/api/2/apps/26809419b03d4fc880dcc3334a71851f/app_versions/upload)
   
 # Pretty prints the JSON object to break variables to a new line
 echo "$response" | python -m json.tool
