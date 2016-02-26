@@ -4,10 +4,6 @@
 revision=$(git rev-list --count HEAD)
 echo "Revision: $revision"
 
-# get last tag version number
-#last_tag=$(git describe --abbrev=0 --tags)
-#echo "$last_tag"
-
 # create a version number for a new tag
 new_tag=$((revision+1))
 echo "$new_tag"

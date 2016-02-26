@@ -17,9 +17,11 @@ response=$(curl \
   -H "X-HockeyAppToken:62ba048fb5fc4151b39d7f56a9b56b0f" \
   https://rink.hockeyapp.net/api/2/apps/26809419b03d4fc880dcc3334a71851f/app_versions/upload)
 
-publink=$(echo $response)
+# Pretty prints the JSON object to break variables to a new line
+echo "$response" | python -m json.tool
+linkobj=$(echo "$response" | python -m json.tool)
 
-msg="Android Build $current_tag published: $publink"
+msg="Android Build $current_tag published: $linkobj"
 
 # publish link to HipChat
 ROOM_ID=2441414
@@ -30,5 +32,6 @@ echo $(curl \
 	-v -L -G \
 	-d "room_id=$ROOM_ID&from=IonicApp"	\
 	--data-urlencode "message=$MESSAGE"	\
-	"https://api.hipchat.com/v1/rooms/message?auth_token=${AUTH_TOKEN}&format=json"
-	)
+  -d "message_format=text" \
+	"https://api.hipchat.com/v1/rooms/message?auth_token=${AUTH_TOKEN}"
+)
