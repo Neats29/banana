@@ -1,4 +1,9 @@
 # banana
+Please note the live branch is 'Develop'
+
+To start please clone the project and install the following:
+- `npm install -g gulp, bower, cucumber, cordova ionic, strongloop`
+- `npm install` (to get all the dependencies)
 
 To start please clone the project and install the following:
 - `npm install -g gulp, bower, cucumber, cordova ionic, strongloop, mocha`
@@ -15,6 +20,7 @@ To start please clone the project and install the following:
 ### Developing the ionic app
 - The ionic files to be edited are in the `www` folder, from there you can run `ionic serve` where you will be able see your changes in the browser on live-reload.
 - Run `gulp watch` in another termial tab to bundle up the javascript files, run sass etc.
+
 
 
 # API

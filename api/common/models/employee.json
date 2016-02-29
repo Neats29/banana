@@ -21,6 +21,9 @@
     },
     "experience": {
       "type": "number"
+    },
+    "image": {
+      "type": "string"
     }
   },
   "validations": [],
