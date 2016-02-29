@@ -1,37 +1,33 @@
 <ion-view>
-    <ion-header-bar>
-        <h1 class="title">Profile</h1>
-    </ion-header-bar>
-    <ion-content ng-init="image.dataURL = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAC5ElEQVR42l2TS0wTURSG/3vvPNrSYlEwRh5CFFoeJg0LjVEjRInxhRETTdyoaxcU48K4Iew0RltM1ISFG1FjfCSa4E5hpRIESiJQIwQTQS1QC8VhSls63rlTGnGSm8k59z/f/c+ZuQT/PZXHu8sJIa0gtKFwY74vYxiIxfUQz/XxXGf4Rcu3f/UkV3jsoRuEtJcVF/prPSVIZ2QsammspFYBDtE0HXOxODRdD3Jdx/jT5oUcIFvcu2+Xx5fncmNkYhl6yoDLwYRkKZEBo4CdhwldQ1z7HeL6xrHHRxdI1naAF/upko+RST2LJXgXrBXuDl4Z53oi8pS/UysaEsux4Gj34TZi9rytuHCq2rsdH8Y0q1iIOeB2jQgPXf0iYpLNm09iaR7p1EoFqTrxKHCk0ecfmkwL22vFhPFFKV8Exlou9wYyqRXo8WiQVDU/GW46UO/rD+tWMbVEA/fqcpOuuxQGkygosyCmBxV8sPFIiOy92GNUVJQjPJ1Chm8tJw0k0waozPD1wU4BqL88ASZTDiHCkdmnixlYjEZB9lzoMUpLyxCeSSP2Z1XYllUGWWEY77KGuPvaFCQeSxK12uKMAtVAZGYexHPq2XCNt5K3kATlAlMoqxIUm4TPd70CsL/ju4Cae5RZgK1OA8PD0yHibXke2Fy0xT8VVQDGrNM5QOWAkTseAWi8/kMAFZ43W1F4K27oGAzNBon39Mty1eaYAtuEWNICCLFdRihQKQBNtyJQHTJUuyTgO4qAkaFZ/PylVYiPWn3mVUBRCvwJw4lV2bI/er963R052bUAm1NGVYmC+LyG9x9ng59uetoswNnXbkJZL2iBLy07IQkHvA3uwjzZlifD5VJQVSpjKZ5E/yD/lQ2jceBG5ULuMtWce8MhtN1gDj9RNyDPYYfTKcGVL8Ptlvl4MojMJRCJpoJc12EWr7uNuZ/m/NtyLmglTGpQVbvPnHwilQnxuI+77BwM1K27zn8B3nT5NJn+m7gAAAAASUVORK5CYII='; initialImage = image.dataURL">
-        <form enctype="multipart/form-data">
-            <div class="upload-wrapper">
-                <input id="inputImage" type="file" accept="image/jpeg, image/png, img/gif" image="image" capture="camera" />
-                <img ng-show="true" ng-src="{{image.dataURL}}" type="{{image.file.type}}" style="width:200px;height:auto" name="image" />
-            </div>
-            <div class="list">
-                <label class="item item-input">
-                    <input type="text" placeholder="First Name" name="firstname" ng-model="employee.firstname" required>
-                </label>
-                <label class="item item-input">
-                    <input type="text" placeholder="Last Name" name="lastname" ng-model="employee.lastname" required>
-                </label>
-                <label class="item item-input">
-                    <input type="text" placeholder="Email" name="email" ng-model="employee.email" required>
-                </label>
-                <label class="item item-input">
-                    <input type="text" placeholder="Phone Number" name="phoneNumber" ng-model="employee.phoneNumber">
-                </label>
-                <label class="item item-input">
-                    <textarea placeholder="Skills (comma separated)" name="skills" ng-model="employee.skills"></textarea>
-                </label>
-                <label class="item">
-                    <button id="saveButton" ng-click="createEmployee(employee, image.dataURL)" class="button button-block button-positive">Save</button>
-                </label>
-                <pre>Same Image?  {{image.dataURL == initialImage}}</pre>
-                <pre>{{image.extension}}</pre>
-                <pre row="100">{{image.dataURL}}</pre>
-                <pre row="100">{{initialImage}}</pre>
-            </div>
-        </form>
-    </ion-content>
+  <ion-header-bar>
+    <h1 class="title">Profile</h1>
+  </ion-header-bar>
+  <ion-content>
+    <form enctype="multipart/form-data">
+      <div class="upload-wrapper">
+        <input id="inputImage" type="file" accept="image/jpeg, image/png, img/gif" image="image" capture="camera" />
+        <img ng-show="true" ng-src="{{image.dataURL}}" type="{{image.file.type}}" style="width:200px;height:auto" name="image" />
+      </div>
+      <div class="list">
+        <label class="item item-input">
+          <input type="text" placeholder="First Name" name="firstname" ng-model="employee.firstname" required>
+        </label>
+        <label class="item item-input">
+          <input type="text" placeholder="Last Name" name="lastname" ng-model="employee.lastname" required>
+        </label>
+        <label class="item item-input">
+          <input type="text" placeholder="Email" name="email" ng-model="employee.email" required>
+        </label>
+        <label class="item item-input">
+          <input type="text" placeholder="Phone Number" name="phoneNumber" ng-model="employee.phoneNumber">
+        </label>
+        <label class="item item-input">
+          <textarea placeholder="Skills (comma separated)" name="skills" ng-model="employee.skills"></textarea>
+        </label>
+        <label class="item">
+          <button id="saveButton" ng-click="createEmployee(employee, image.dataURL)" class="button button-block button-positive">Save</button>
+        </label>
+      </div>
+    </form>
+  </ion-content>
 </ion-view>
