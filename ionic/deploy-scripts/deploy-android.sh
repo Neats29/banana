@@ -14,7 +14,7 @@ response=$(curl \
   -F "version=$current_tag" \
   -F "shortversion=0.1.$current_tag" \
   -F "ipa=@../platforms/android/build/outputs/apk/android-release-unsigned.apk" \
-  -H "X-HockeyAppToken:62ba048fb5fc4151b39d7f56a9b56b0f" \
+  -H "X-HockeyAppToken:7dad379789524d4b93307967498404ac" \
   https://rink.hockeyapp.net/api/2/apps/26809419b03d4fc880dcc3334a71851f/app_versions/upload)
 
 # Pretty prints the JSON object to break variables to a new line
