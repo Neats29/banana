@@ -30,10 +30,6 @@ rm ../config.xml
 mv ../config.temp.xml ../config.xml
 
 
-# change the version in iOS Info.plist
-# /usr/libexec/PlistBuddy -c "Set CFBundleVersion 0.1.$new_tag" src/Moleskin.iOS/Info.plist
-# /usr/libexec/PlistBuddy -c "Set CFBundleShortVersionString 0.1.$new_tag" src/Moleskin.iOS/Info.plist
-
 # create a new tag and push it to VCS
 git tag -a $new_tag -m "Cohaesus App v$new_tag"
 git push origin --tags

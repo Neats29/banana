@@ -13,8 +13,7 @@ API_TOKEN=7dad379789524d4b93307967498404ac
 # APP_FILE should match the <name> in your config.xml file. 
 APP_FILE="android-release-unsigned"
 
-# push the app to HockeyApp
-# API parameters: http://support.hockeyapp.net/kb/api/api-apps#upload-app
+# push the app to HockeyApp [Additional API parameters: http://support.hockeyapp.net/kb/api/api-apps#upload-app]
 response=$(curl \
   -F "status=2" \
   -F "notify=1" \

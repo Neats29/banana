@@ -12,7 +12,7 @@ VAR=$(dirname "$PWD")
 # This archives the .xcodeproj file generated from [$ ionic build ios]...
 /usr/bin/xcodebuild archive -project $VAR/platforms/ios/"$APP_FILE".xcodeproj -scheme "$APP_FILE" -archivePath $VAR/platforms/ios/"$APP_FILE"
 
-# ...then generates an ipa file that we can upload to HockeyApp
+# ...then generates an ipa file that we can upload to HockeyApp (found in Platforms > ios > build)
 /usr/bin/xcrun -sdk iphoneos PackageApplication $VAR/platforms/ios/"$APP_FILE".xcarchive/Products/Applications/"$APP_FILE".app -o $VAR/platforms/ios/build/"$APP_FILE""_v""$current_tag".ipa
 
 # APP_ID can be located by selecting your app on HockeyApp's dashboard. 
@@ -21,7 +21,7 @@ APP_ID=2a0012a1204841fb80505ed362fcfdcc
 # The API_TOKEN is located in HockeyApp's Account Settings > API Tokens
 API_TOKEN=7dad379789524d4b93307967498404ac
 
-# Push to HockeyApp [API parameters: http://support.hockeyapp.net/kb/api/api-apps#upload-app]
+# Push to HockeyApp [Additional API parameters: http://support.hockeyapp.net/kb/api/api-apps#upload-app]
 response=$(curl \
   -F "status=2" \
   -F "notify=1" \

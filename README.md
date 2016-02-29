@@ -62,6 +62,37 @@ To create a new project, you can follow Ionic's [installation guide] (http://ion
 	- (we reccomend postgreSQL, as it is easier to manipulate the data structure of relational databases as you go along.)
 
 
+## HockeyApp
+### Setup
+- We are using Hockeyapp to distribute builds to approved devices. 
+- Request an invitation to the Cohaesus HockeyApp account / create a free [account] (https://rink.hockeyapp.net/registrations/new)
+- At this point there are no scripts to create the apps. Either navigate to the HockeyApp [dashboard] (https://rink.hockeyapp.net/manage/dashboard) and drag and drop the files, or alternatively download [HockeyApp for Mac] (http://hockeyapp.net/releases/mac/) and upload the files directly.   
+- Collect the App IDs (located by selecting the app from the dashboard) and [generate API tokens] (https://rink.hockeyapp.net/manage/auth_tokens) for the apps. Update the deploy-scripts files accordingly.
+
+### Deploying to HockeyApp
+
+#### Android (.apk)
+- Execute the deploy-tags.sh script `$ ./deploy-tags.sh`.
+- In the ionic directory, run `$ ionic build android'
+- Follow [these instructions](http://ionicframework.com/docs/guide/publishing.html) to generate and sign the .apk file.
+- Execute the deploy-ios.sh script.
+
+#### iOS (.ipa)
+- Execute the deploy-tags.sh script.
+- In the ionic directory, run `$ ionic build ios'
+- Request an invitation to the 'Cohaesus Projects Ltd' Apple Developer Account.
+- Navigate to Xcode > Preferences > Account.
+- Add a Cohaesus Projects Ltd admin's Apple ID (using the plus sign on the bottom left corner).
+- Import the admin's developer profile using the cog (next to the plus symbol).
+- If you experience the following error: “Missing iOS Distribution signing identity for …”, [this] (http://stackoverflow.com/questions/32821189/xcode-7-error-missing-ios-distribution-signing-identity-for) should resolve it.
+- Execute the deploy-ios.sh script.
+
+
+
+
+
+
+
 ## Testing
 For Testing we are using the following:
 - [gherkin](https://github.com/cucumber/cucumber/wiki/Gherkin): for BDD to write in human-readable language (especially useful for non-techies)
