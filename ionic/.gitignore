@@ -3,4 +3,8 @@ platforms/
 plugins/
 .DS_Store
 npm-debug.log
+<<<<<<< HEAD
 www/dist/
+=======
+**/npm-debug.log
+>>>>>>> 324c8afe077d5e15c3e6067e0fe826410225644a
