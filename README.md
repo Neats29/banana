@@ -67,6 +67,7 @@ To create a new project, you can follow Ionic's [installation guide] (http://ion
 - We are using Hockeyapp to distribute builds to approved devices. 
 - Request an invitation to the Cohaesus HockeyApp account / create a free [account] (https://rink.hockeyapp.net/registrations/new)
 - At this point there are no scripts to create the apps. Either navigate to the HockeyApp [dashboard] (https://rink.hockeyapp.net/manage/dashboard) and drag and drop the files, or alternatively download [HockeyApp for Mac] (http://hockeyapp.net/releases/mac/) and upload the files directly.   
+- Add your devices to your profile. 
 - Collect the App IDs (located by selecting the app from the dashboard) and [generate API tokens] (https://rink.hockeyapp.net/manage/auth_tokens) for the apps. Update the deploy-scripts files accordingly.
 
 ### Deploying to HockeyApp
@@ -86,10 +87,6 @@ To create a new project, you can follow Ionic's [installation guide] (http://ion
 - Import the admin's developer profile using the cog (next to the plus symbol).
 - If you experience the following error: “Missing iOS Distribution signing identity for …”, [this] (http://stackoverflow.com/questions/32821189/xcode-7-error-missing-ios-distribution-signing-identity-for) should resolve it.
 - Execute the deploy-ios.sh script.
-
-
-
-
 
 
 
