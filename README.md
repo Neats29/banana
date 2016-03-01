@@ -18,6 +18,23 @@ To create a new project, you can follow Ionic's [installation guide] (http://ion
 [**Android**] (http://cordova.apache.org/docs/en/3.4.0/guide/platforms/android/index.html#Android%20Platform%20Guide)
 
 
+## CSS Framework
+
+### SASS
+- SASS structure is based on [Inverted the Triangle CSS] (http://www.creativebloq.com/web-design/manage-large-css-projects-itcss-101517528) (ITCSS), courtesy of Harry Roberts.
+- It is important that you load in any files your create in the correct order in the main.scss file. 
+- Each folder contains a readme.md file, which explains the expected content.
+
+### Angular-ui-Bootstrap
+- We have also installed Bootstrap components written in pure AngularJS. You can view the documentation [here] (https://angular-ui.github.io/bootstrap/).
+
+### Bootstrap CSS
+- The Bootstrap CSS library is a listed dependancy of the angular-ui-bootstrap module, so you also have access to the [Bootstrap CSS library] (http://getbootstrap.com/css/).
+
+### CSS
+- We have left in a default style.css in the www folder. If you want to use this 
+
+
 ## Emulation
 ### Browser (live reload)
 - In your ionic folder run `$ ionic serve` from the terminal.
@@ -66,27 +83,29 @@ To create a new project, you can follow Ionic's [installation guide] (http://ion
 ### Setup
 - We are using Hockeyapp to distribute builds to approved devices. 
 - Request an invitation to the Cohaesus HockeyApp account / create a free [account] (https://rink.hockeyapp.net/registrations/new)
-- At this point there are no scripts to create the apps. Either navigate to the HockeyApp [dashboard] (https://rink.hockeyapp.net/manage/dashboard) and drag and drop the files, or alternatively download [HockeyApp for Mac] (http://hockeyapp.net/releases/mac/) and upload the files directly.   
+- At this point there are no scripts to initially create the apps. Either navigate to the HockeyApp [dashboard] (https://rink.hockeyapp.net/manage/dashboard) and drag & drop the .apk/.ipa files, or alternatively download [HockeyApp for Mac] (http://hockeyapp.net/releases/mac/) and upload the files directly.   
 - Add your devices to your profile. 
 - Collect the App IDs (located by selecting the app from the dashboard) and [generate API tokens] (https://rink.hockeyapp.net/manage/auth_tokens) for the apps. Update the deploy-scripts files accordingly.
 
 ### Deploying to HockeyApp
-
 #### Android (.apk)
-- Execute the deploy-tags.sh script `$ ./deploy-tags.sh`.
-- In the ionic directory, run `$ ionic build android'
-- Follow [these instructions](http://ionicframework.com/docs/guide/publishing.html) to generate and sign the .apk file.
-- Execute the deploy-ios.sh script.
+1. Execute the deploy-tags.sh script `$ ./deploy-tags.sh`.
+2. In the ionic directory, run `$ ionic build android'
+3. Follow [these instructions](http://ionicframework.com/docs/guide/publishing.html) to generate and sign the .apk file.
+4. Execute the deploy-ios.sh script.
 
 #### iOS (.ipa)
-- Execute the deploy-tags.sh script.
-- In the ionic directory, run `$ ionic build ios'
 - Request an invitation to the 'Cohaesus Projects Ltd' Apple Developer Account.
 - Navigate to Xcode > Preferences > Account.
 - Add a Cohaesus Projects Ltd admin's Apple ID (using the plus sign on the bottom left corner).
 - Import the admin's developer profile using the cog (next to the plus symbol).
 - If you experience the following error: “Missing iOS Distribution signing identity for …”, [this] (http://stackoverflow.com/questions/32821189/xcode-7-error-missing-ios-distribution-signing-identity-for) should resolve it.
-- Execute the deploy-ios.sh script.
+
+1. Execute the deploy-tags.sh script.
+2. In the ionic directory, run `$ ionic build ios`
+3. Execute the deploy-ios.sh script.
+
+
 
 
 
