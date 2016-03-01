@@ -10,6 +10,7 @@ var gulp = require('gulp'),
     uglify = require('gulp-uglify'),
     cucumber = require('gulp-cucumber'),
     ngAnnotate = require('gulp-ng-annotate'),
+    shell = require('gulp-shell');
 
 // Shortcut paths to locate js and sass files
 var paths = {
@@ -59,6 +60,21 @@ gulp.task('watch', function() {
   gulp.watch(paths.sass, ['sass']);
   gulp.watch(paths.js, ['scripts'])
 });
+
+
+// Deploy Tasks
+// Each task will increment the Git tag and deploy the specified platform to HockeyApp
+gulp.task('deploy-Android', shell.task([
+  './deploy-scripts/deploy-tags.sh',
+  'ionic build --release android',
+  './deploy-scripts/deploy-android.sh',
+]));
+
+gulp.task('deploy-iOS', shell.task([
+  './deploy-scripts/deploy-tags.sh',
+  'ionic build ios',
+  './deploy-scripts/deploy-ios.sh',
+]));
 
 
 // Install task

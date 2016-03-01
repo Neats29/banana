@@ -20,7 +20,7 @@ response=$(curl \
   -F "notes=Version v$current_tag" \
   -F "version=$current_tag" \
   -F "shortversion=0.1.$current_tag" \
-  -F "ipa=@../platforms/android/build/outputs/apk/$APP_FILE.apk" \
+  -F "ipa=@./platforms/android/build/outputs/apk/$APP_FILE.apk" \
   -H "X-HockeyAppToken:$API_TOKEN" \
   https://rink.hockeyapp.net/api/2/apps/$APP_ID/app_versions/upload)
 

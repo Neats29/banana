@@ -32,7 +32,7 @@ To create a new project, you can follow Ionic's [installation guide] (http://ion
 - The Bootstrap CSS library is a listed dependancy of the angular-ui-bootstrap module, so you also have access to the [Bootstrap CSS library] (http://getbootstrap.com/css/).
 
 ### CSS
-- We have left in a default style.css in the www folder. If you want to use this 
+- We have left in a default style.css in the www folder, although it is not currently referenced in index.html
 
 
 ## Emulation
@@ -89,21 +89,25 @@ To create a new project, you can follow Ionic's [installation guide] (http://ion
 
 ### Deploying to HockeyApp
 #### Android (.apk)
-1. Execute the deploy-tags.sh script `$ ./deploy-tags.sh`.
-2. In the ionic directory, run `$ ionic build android'
-3. Follow [these instructions](http://ionicframework.com/docs/guide/publishing.html) to generate and sign the .apk file.
-4. Execute the deploy-ios.sh script.
+##### Initial Setup
+1. In the ionic directory, run `$ ionic build android'
+2. Follow [these instructions](http://ionicframework.com/docs/guide/publishing.html) to generate and sign the .apk file.
+
+##### Future Deployment
+1. Run the Deploy Android Gulp task `$ gulp deploy-Android`
 
 #### iOS (.ipa)
+##### Initial Setup
+- In the ionic directory, run `$ ionic build ios`
 - Request an invitation to the 'Cohaesus Projects Ltd' Apple Developer Account.
 - Navigate to Xcode > Preferences > Account.
-- Add a Cohaesus Projects Ltd admin's Apple ID (using the plus sign on the bottom left corner).
-- Import the admin's developer profile using the cog (next to the plus symbol).
+- Import your developer profile using the cog (next to the plus symbol).
+- Open Xcode. Import the .xcodeproj generated from `$ ionic build ios`.
+- Select Product > Clean.
 - If you experience the following error: “Missing iOS Distribution signing identity for …”, [this] (http://stackoverflow.com/questions/32821189/xcode-7-error-missing-ios-distribution-signing-identity-for) should resolve it.
 
-1. Execute the deploy-tags.sh script.
-2. In the ionic directory, run `$ ionic build ios`
-3. Execute the deploy-ios.sh script.
+##### Future Deployment
+1. Run the Deploy Android Gulp task `$ gulp deploy-iOS`
 
 
 

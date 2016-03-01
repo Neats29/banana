@@ -7,13 +7,11 @@ echo "Current tag: $current_tag"
 # APP_FILE should match the <name> in your config.xml file. 
 APP_FILE="Onboard App"
 
-VAR=$(dirname "$PWD")
-
 # This archives the .xcodeproj file generated from [$ ionic build ios]...
-/usr/bin/xcodebuild archive -project $VAR/platforms/ios/"$APP_FILE".xcodeproj -scheme "$APP_FILE" -archivePath $VAR/platforms/ios/"$APP_FILE"
+/usr/bin/xcodebuild archive -project $PWD/platforms/ios/"$APP_FILE".xcodeproj -scheme "$APP_FILE" -archivePath $PWD/platforms/ios/"$APP_FILE"
 
 # ...then generates an ipa file that we can upload to HockeyApp (found in Platforms > ios > build)
-/usr/bin/xcrun -sdk iphoneos PackageApplication $VAR/platforms/ios/"$APP_FILE".xcarchive/Products/Applications/"$APP_FILE".app -o $VAR/platforms/ios/build/"$APP_FILE""_v""$current_tag".ipa
+/usr/bin/xcrun -sdk iphoneos PackageApplication $PWD/platforms/ios/"$APP_FILE".xcarchive/Products/Applications/"$APP_FILE".app -o $PWD/platforms/ios/build/"$APP_FILE""_v""$current_tag".ipa
 
 # APP_ID can be located by selecting your app on HockeyApp's dashboard. 
 APP_ID=2a0012a1204841fb80505ed362fcfdcc
@@ -26,7 +24,7 @@ response=$(curl \
   -F "status=2" \
   -F "notify=1" \
   -F "notes=Version v$current_tag" \
-  -F "ipa=@../platforms/ios/build/$APP_FILE""_v$current_tag.ipa" \
+  -F "ipa=@./platforms/ios/build/$APP_FILE""_v$current_tag.ipa" \
   -H "X-HockeyAppToken:$API_TOKEN" \
   https://rink.hockeyapp.net/api/2/apps/2a0012a1204841fb80505ed362fcfdcc/app_versions/upload)
   
