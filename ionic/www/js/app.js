@@ -11,8 +11,9 @@
 var controllers = require('./controllers.js');
 var ngResource = require('../../node_modules/angular-resource/angular-resource.min.js');
 var bootstrap = require('../../node_modules/angular-ui-bootstrap/dist/ui-bootstrap-tpls.js');
+var hockeyApp = require('../../plugins/cordova-plugin-hockeyapp/www/hockeyapp.js');
 
-angular.module('starter', ['ionic', 'upload', 'starter.controllers', 'ui.bootstrap'])
+angular.module('starter', ['ionic', 'upload', 'starter.controllers', 'ui.bootstrap', 'hockeyapp'])
 
 .controller ('MainController', function ($scope) {} )
 
@@ -23,8 +24,16 @@ angular.module('starter', ['ionic', 'upload', 'starter.controllers', 'ui.bootstr
     if (window.cordova && window.cordova.plugins.Keyboard) {
       cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
       cordova.plugins.Keyboard.disableScroll(true);
-
+      
+      // hockeyapp.start(function(success){
+      //   if (success) console.log(success);
+      // }, 
+      // function(err){
+      //   if (err) console.log(err);
+      // }, 
+      // "26809419b03d4fc880dcc3334a71851f", true, true, 0, "5ff6a3e27607948309a94dd59c440b2d");
     }
+
     if (window.StatusBar) {
       // org.apache.cordova.statusbar required
       StatusBar.styleDefault();

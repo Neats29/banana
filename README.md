@@ -107,10 +107,7 @@ To create a new project, you can follow Ionic's [installation guide] (http://ion
 - If you experience the following error: “Missing iOS Distribution signing identity for …”, [this] (http://stackoverflow.com/questions/32821189/xcode-7-error-missing-ios-distribution-signing-identity-for) should resolve it.
 
 ##### Future Deployment
-1. Run the Deploy Android Gulp task `$ gulp deploy-iOS`
-
-
-
+1. Run the Deploy iOS Gulp task `$ gulp deploy-iOS`
 
 
 ## Testing
