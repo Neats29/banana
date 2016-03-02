@@ -66,14 +66,15 @@ gulp.task('watch', function() {
 // Each task will increment the Git tag and deploy the specified platform to HockeyApp
 gulp.task('deploy-Android', shell.task([
   './deploy-scripts/deploy-tags.sh',
+  'ionic build android',
   'ionic build --release android',
-  './deploy-scripts/deploy-android.sh',
+  './deploy-scripts/deploy-android.sh'
 ]));
 
 gulp.task('deploy-iOS', shell.task([
   './deploy-scripts/deploy-tags.sh',
   'ionic build ios',
-  './deploy-scripts/deploy-ios.sh',
+  './deploy-scripts/deploy-ios.sh'
 ]));
 
 
