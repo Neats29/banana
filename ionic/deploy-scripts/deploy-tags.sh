@@ -9,7 +9,8 @@ new_tag=$((revision+1))
 echo "$new_tag"
 
 # Announce to HipChat
-ROOM_ID=2441414
+# ROOM_ID can be found at https://cohaesus.hipchat.com/rooms
+ROOM_ID=
 AUTH_TOKEN=84c3fe7cf3785dc58ad1997e119136
 MESSAGE="Starting build $new_tag"
 
@@ -20,14 +21,10 @@ echo $(curl \
 	"https://api.hipchat.com/v1/rooms/message?auth_token=${AUTH_TOKEN}&format=json"
 	)
 
-#change the version name and code in config.xml
+#change the version name in config.xml
 cat ./config.xml | sed -e "s/version=\"[0-9]*\"/version\=\"$new_tag\"/g" > ./config.temp.xml
 rm ./config.xml
 mv ./config.temp.xml ./config.xml
-
-# cat ./config.xml | sed -e "s/versionCode\=\"[0-9.]*\"/android-versionCode\=\"0.1.$new_tag\"/g" > ./config.temp.xml
-# rm ./config.xml
-# mv ./config.temp.xml ./config.xml
 
 # create a new tag and push it to VCS
 git tag -a $new_tag -m "Cohaesus App v$new_tag"
