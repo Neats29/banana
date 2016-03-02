@@ -10,19 +10,19 @@
       </div>
       <div class="list">
         <label class="item item-input">
-          <input type="text" placeholder="First Name" name="firstname" ng-model="employee.firstname" required>
+          <input type="text" placeholder="First Name" name="firstname" ng-model="employee.firstname" class="text-input" required>
         </label>
         <label class="item item-input">
-          <input type="text" placeholder="Last Name" name="lastname" ng-model="employee.lastname" required>
+          <input type="text" placeholder="Last Name" name="lastname" ng-model="employee.lastname" class="text-input" required>
         </label>
         <label class="item item-input">
-          <input type="text" placeholder="Email" name="email" ng-model="employee.email" required>
+          <input type="text" placeholder="Email" name="email" ng-model="employee.email" class="text-input" required>
         </label>
         <label class="item item-input">
-          <input type="text" placeholder="Phone Number" name="phoneNumber" ng-model="employee.phoneNumber">
+          <input type="text" placeholder="Phone Number" name="phoneNumber" ng-model="employee.phoneNumber" class="text-input">
         </label>
         <label class="item item-input">
-          <textarea placeholder="Skills (comma separated)" name="skills" ng-model="employee.skills"></textarea>
+          <textarea class="text-input" placeholder="Skills (comma separated)" name="skills" ng-model="employee.skills"></textarea>
         </label>
         <label class="item">
           <button id="saveButton" ng-click="createEmployee(employee, image.dataURL)" class="button button-block button-positive">Save</button>
