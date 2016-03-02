@@ -1,1 +1,3 @@
-/* Default style sheet (not referenced in index.html by default, please use the scss folder in the parent directory). */ 
+/* Default style sheet */ 
+/* Anything in here will be overwritten by the ITCSS SASS heriarchy found in scss in the parent directory) */
+/* Since this file is imported into the main.scss file, you do not need to amend the css declaration in index.html */

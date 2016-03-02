@@ -29,7 +29,6 @@ mv ./config.temp.xml ./config.xml
 # rm ./config.xml
 # mv ./config.temp.xml ./config.xml
 
-
 # create a new tag and push it to VCS
 git tag -a $new_tag -m "Cohaesus App v$new_tag"
 git push origin --tags

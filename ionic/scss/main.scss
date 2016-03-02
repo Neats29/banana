@@ -22,9 +22,11 @@ $ionicons-font-path: "../../lib/ionic/fonts" !default;
 // Include all of Ionic
 @import "www/lib/ionic/scss/ionic";
 
-
 // Bootstrap CSS (angular-ui-bootstrap dependancy)
 @import "node_modules/bootstrap/dist/css/bootstrap";
+
+// Default Style Sheet (anything in here will be overwritten by the ITCSS SASS heriarchy detailed below)
+@import "www/css/style"
 
 
 /*

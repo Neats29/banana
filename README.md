@@ -32,7 +32,7 @@ To create a new project, you can follow Ionic's [installation guide] (http://ion
 - The Bootstrap CSS library is a listed dependancy of the angular-ui-bootstrap module, so you also have access to the [Bootstrap CSS library] (http://getbootstrap.com/css/).
 
 ### CSS
-- We have left in a default style.css in the www folder, although it is not currently referenced in index.html
+- We have left in a default style.css in the www folder. Use either this or SASS (found in scss in the parent directory). DO not use both, as the SASS 
 
 
 ## Emulation
